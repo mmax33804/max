@@ -421,12 +421,17 @@ function triggerHaptic(pattern) {
 }
 
 // Attach haptic feedback to interactive elements
-document.addEventListener('DOMContentLoaded', () => {
+function initHaptics() {
     const interactives = document.querySelectorAll('.mobile-menu-btn, .theme-btn, .draggable, .project-detail-card, .pd-link, .nav-links a');
-    
     interactives.forEach(el => {
         el.addEventListener('touchstart', () => {
-            triggerHaptic(15);
+            triggerHaptic(30); // increased to 30ms to be more noticeable
         }, { passive: true });
     });
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHaptics);
+} else {
+    initHaptics();
+}
