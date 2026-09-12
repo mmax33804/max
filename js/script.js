@@ -411,3 +411,22 @@ if (cvToggle && cvDropdown) {
         }
     });
 }
+
+// --- HAPTIC FEEDBACK FOR MOBILE ---
+function triggerHaptic(pattern) {
+    if (window.innerWidth <= 1024 && navigator.vibrate) {
+        // pattern: 10-15ms for a light tap, 30ms for a heavier press
+        navigator.vibrate(pattern || 15);
+    }
+}
+
+// Attach haptic feedback to interactive elements
+document.addEventListener('DOMContentLoaded', () => {
+    const interactives = document.querySelectorAll('.mobile-menu-btn, .theme-btn, .draggable, .project-detail-card, .pd-link, .nav-links a');
+    
+    interactives.forEach(el => {
+        el.addEventListener('touchstart', () => {
+            triggerHaptic(15);
+        }, { passive: true });
+    });
+});
