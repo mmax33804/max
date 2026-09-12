@@ -890,7 +890,7 @@ body {
 @media (max-width: 1024px) {
     /* --- DRAGGABLE CARDS EXACT MOBILE LAYOUT --- */
     .draggable-area {
-        height: 1041px !important;
+        height: 991px !important;
         position: relative !important;
         overflow: visible !important;
     }
