@@ -215,6 +215,7 @@
                 smooth: true,
                 mouseMultiplier: 1,
                 smoothTouch: true,
+                syncTouch: true,
                 touchMultiplier: 2,
                 infinite: false,
             });
