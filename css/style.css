@@ -88,12 +88,9 @@ body.loading {
         ::-webkit-scrollbar-thumb {
             background: #CCCCCC;
             border-radius: 6px;
-        }@media (hover: hover) {
-
-        ::-webkit-scrollbar-thumb:hover {
+        }::-webkit-scrollbar-thumb:hover {
             background: #999999;
         }
-}
 
         
 
@@ -179,13 +176,9 @@ body {
             background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: background-position 0.4s ease;
-        }@media (hover: hover) {
-
-
-        .logo:hover {
+        }.logo:hover {
             background-position: left;
         }
-}
 
         .nav-links {
             display: flex;
@@ -208,15 +201,11 @@ body {
             border: 1px solid transparent;
             border-radius: var(--radius);
             transition: background-color 0.2s ease, border-color 0.2s ease;
-        }@media (hover: hover) {
-
-        
-        .nav-item:hover {
+        }.nav-item:hover {
             color: #000;
             background-color: var(--bg-btn);
             border: 1px solid var(--border-btn);
         }
-}
 
         .count {
             color: var(--text-light);
@@ -243,13 +232,9 @@ body {
             gap: 8px;
             transition: background-color 0.2s ease;
             text-decoration: none;
-        }@media (hover: hover) {
-
-
-        .btn:hover {
+        }.btn:hover {
             background-color: #e5e5e5;
         }
-}
         
                 /* --- LANG DROPDOWN --- */
         .lang-dropdown {
@@ -313,13 +298,9 @@ body {
             transition: background-color 0.2s;
             margin: 0 3px;
             border-radius: 2px;
-        }@media (hover: hover) {
-
-
-        .lang-option:hover {
+        }.lang-option:hover {
             background-color: #F2F2F2;
         }
-}
 
         /* --- NEW HERO SECTION --- */
         .hero-block {
@@ -577,13 +558,9 @@ body {
             color: #333333;
             border-bottom: 2px dotted #999999;
             padding-bottom: 2px;
-        }@media (hover: hover) {
-
-        
-        .pd-link:hover {
+        }.pd-link:hover {
             border-bottom-color: #333333;
         }
-}
 
                 /* --- FAQ SECTION --- */
                         #faq {
@@ -612,15 +589,11 @@ body {
             height: 80px;
             overflow: hidden;
             display: block;
-        }@media (hover: hover) {
-
-
-        .faq-item:not(.active):hover {
+        }.faq-item:not(.active):hover {
             transform: scale(1.015);
             z-index: 10;
             position: relative;
         }
-}
         
         .faq-header {
             display: flex;
@@ -645,13 +618,9 @@ body {
             object-fit: contain;
             opacity: 0.7;
             transition: transform 0.3s ease, background-color 0.2s ease;
-        }@media (hover: hover) {
-
-        
-        .faq-item:hover .faq-icon {
+        }.faq-item:hover .faq-icon {
             background-color: transparent;
         }
-}
         
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
@@ -752,13 +721,9 @@ body {
             font-size: 14px;
             color: #555555;
             text-decoration: none;
-        }@media (hover: hover) {
-
-
-        .review-link:hover {
+        }.review-link:hover {
             text-decoration: underline;
         }
-}
         /* --- FOOTER --- */
                 .site-footer {
             width: 100%;
@@ -791,13 +756,9 @@ body {
             background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: background-position 0.4s ease;
-        }@media (hover: hover) {
-
-
-        .footer-left:hover {
+        }.footer-left:hover {
             background-position: left;
         }
-}
         
         .footer-right {
             display: flex;
@@ -819,13 +780,9 @@ body {
             background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: background-position 0.4s ease;
-        }@media (hover: hover) {
-
-
-        .footer-link:hover {
+        }.footer-link:hover {
             background-position: left;
         }
-}
 
         /* Tooltip Container */
         .tooltip-container {
@@ -867,16 +824,12 @@ body {
             border-width: 5px;
             border-style: solid;
             border-color: #E8E8E8 transparent transparent transparent;
-        }@media (hover: hover) {
-
-
-        /* Show tooltip on hover */
+        }/* Show tooltip on hover */
         .tooltip-container:hover .tooltip-text {
             visibility: visible;
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
-}
             /* --- SCROLL ANIMATION --- */
         .fade-up {
             opacity: 0;
@@ -905,14 +858,10 @@ body {
             z-index: 10;
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }@media (hover: hover) {
-
-        
-        .draggable:hover .drag-tooltip {
+        }.draggable:hover .drag-tooltip {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
         }
-}
             /* --- CLICK PARTICLES --- */
         .click-particle {
             position: fixed;
@@ -941,7 +890,7 @@ body {
 @media (max-width: 1024px) {
     /* --- DRAGGABLE CARDS EXACT MOBILE LAYOUT --- */
     .draggable-area {
-        height: 1250px !important;
+        height: 1041px !important;
         position: relative !important;
     }
     
@@ -962,9 +911,9 @@ body {
     /* 1. Conde Nast */
     .draggable-area .drag-project-card:nth-child(1) {
         position: absolute !important;
-        width: 380px !important;
-        height: 339px !important;
-        top: 41px !important;
+        width: 320px !important;
+        height: 285px !important;
+        top: 34px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         z-index: 5 !important;
@@ -973,31 +922,31 @@ body {
     /* 2. UI Capture */
     .draggable-area .drag-project-card:nth-child(2) {
         position: absolute !important;
-        width: 380px !important;
-        height: 570px !important;
-        top: 231px !important;
+        width: 320px !important;
+        height: 480px !important;
+        top: 194px !important;
         left: 50% !important;
-        transform: translateX(calc(-50% + 27px)) !important;
+        transform: translateX(calc(-50% + 20px)) !important;
         z-index: 3 !important;
     }
 
     /* 3. Lego */
     .draggable-area .drag-project-card:nth-child(3) {
         position: absolute !important;
-        width: 380px !important;
-        height: 347px !important;
-        top: 578px !important;
+        width: 320px !important;
+        height: 292px !important;
+        top: 486px !important;
         left: 50% !important;
-        transform: translateX(calc(-50% - 27px)) !important;
+        transform: translateX(calc(-50% - 20px)) !important;
         z-index: 2 !important;
     }
 
     /* 4. Tropicana */
     .draggable-area .drag-project-card:nth-child(4) {
         position: absolute !important;
-        width: 380px !important;
-        height: 350px !important;
-        top: 828px !important;
+        width: 320px !important;
+        height: 294px !important;
+        top: 697px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         z-index: 1 !important;
@@ -1006,11 +955,11 @@ body {
     /* 5. Acer */
     .draggable-area .drag-project-card:nth-child(5) {
         position: absolute !important;
-        width: 380px !important;
-        height: 347px !important;
-        top: 170px !important;
+        width: 320px !important;
+        height: 292px !important;
+        top: 142px !important;
         left: 50% !important;
-        transform: translateX(calc(-50% - 27px)) !important;
+        transform: translateX(calc(-50% - 20px)) !important;
         z-index: 4 !important;
     }
 
@@ -1142,6 +1091,10 @@ body {
         box-sizing: border-box !important;
     }
     .navbar {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 100 !important;
+        background-color: #ffffff !important;
         width: 100% !important;
         height: auto !important;
         padding: 24px 20px !important;
@@ -1541,6 +1494,17 @@ body {
     #faq .section-title {
         margin-top: 0 !important; /* Eliminam spatiul default de la h2 */
     }
+
+    body:not(.menu-open) .nav-links,
+    body:not(.menu-open) .nav-actions {
+        display: none !important;
+    }
+
+    body.menu-open .nav-links,
+    body.menu-open .nav-actions {
+        display: flex !important;
+        animation: fadeInMenu 0.3s ease forwards !important;
+    }
 }
 
 
@@ -1797,12 +1761,8 @@ body {
     font-size: 14px;
     font-weight: 500;
     transition: background 0.2s ease;
-}@media (hover: hover) {
-
-
-.cv-download-option:hover {
+}.cv-download-option:hover {
     background: #F5F5F5;
-}
 }
 
 .cv-download-option + .cv-download-option {
@@ -1861,23 +1821,11 @@ body {
     padding: 0;
     flex-shrink: 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-}@media (hover: hover) {
-
-
-.theme-btn:hover {
+}.theme-btn:hover {
     background-color: #E8E8E8;
-
-    body:not(.menu-open) .nav-links,
-    body:not(.menu-open) .nav-actions {
-        display: none !important;
-    }
 }
+
     
-    body.menu-open .nav-links,
-    body.menu-open .nav-actions {
-        animation: fadeInMenu 0.3s ease forwards !important;
-    }
-    }
 
 
 

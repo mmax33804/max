@@ -214,7 +214,7 @@
                 gestureDirection: 'vertical',
                 smooth: true,
                 mouseMultiplier: 1,
-                smoothTouch: false,
+                smoothTouch: true,
                 touchMultiplier: 2,
                 infinite: false,
             });
@@ -230,6 +230,7 @@
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
+                    document.body.classList.remove('menu-open'); // CLOSE MOBILE MENU ON CLICK!
                     var target = this.getAttribute('href');
                     if (target === '#') {
                         lenis.scrollTo(0, { duration: 2.5 });
