@@ -208,7 +208,7 @@
             
 
             const lenis = new Lenis({
-                duration: 2.5,
+                duration: 1.8,
                 easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                 direction: 'vertical',
                 gestureDirection: 'vertical',
@@ -216,7 +216,7 @@
                 mouseMultiplier: 1,
                 smoothTouch: true,
                 syncTouch: true,
-                touchMultiplier: 2,
+                touchMultiplier: 1.2,
                 infinite: false,
             });
 
@@ -234,9 +234,9 @@
                     document.body.classList.remove('menu-open'); // CLOSE MOBILE MENU ON CLICK!
                     var target = this.getAttribute('href');
                     if (target === '#') {
-                        lenis.scrollTo(0, { duration: 2.5 });
+                        lenis.scrollTo(0, { duration: 1.8 });
                     } else {
-                        lenis.scrollTo(target, { duration: 2.5, offset: -100 });
+                        lenis.scrollTo(target, { duration: 1.8, offset: -100 });
                     }
                 });
             });
