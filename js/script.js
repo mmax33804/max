@@ -214,9 +214,9 @@
                 gestureDirection: 'vertical',
                 smooth: true,
                 mouseMultiplier: 1,
-                smoothTouch: true,
-                syncTouch: true,
-                touchMultiplier: 1.2,
+                smoothTouch: false,
+                syncTouch: false,
+                touchMultiplier: 1,
                 infinite: false,
             });
 
