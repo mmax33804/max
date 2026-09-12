@@ -1213,11 +1213,11 @@ body {
     }
     
     /* Top offsets for sticky effect on mobile */
-    .sticky-card-wrapper:nth-child(1) { top: 80px !important; }
-    /* Aliniere absoluta la acelasi pixel: Titlul are EXACT 54px cu margin, deci 80+54=134px */
-    .sticky-card-wrapper:nth-child(2) { top: 134px !important; }
-    .sticky-card-wrapper:nth-child(3) { top: 134px !important; }
-    .sticky-card-wrapper:nth-child(4) { top: 134px !important; }
+    .sticky-card-wrapper:nth-child(1) { top: 95px !important; }
+    /* Aliniere absoluta la acelasi pixel: Titlul are EXACT 54px cu margin, deci 95+54=149px */
+    .sticky-card-wrapper:nth-child(2) { top: 149px !important; }
+    .sticky-card-wrapper:nth-child(3) { top: 149px !important; }
+    .sticky-card-wrapper:nth-child(4) { top: 149px !important; }
 
     /* Fix huge gap above the title and FORCE absolute pixel height */
     .sticky-card-wrapper h2.section-title {

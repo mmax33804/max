@@ -236,7 +236,7 @@
                     if (target === '#') {
                         lenis.scrollTo(0, { duration: 1.8 });
                     } else {
-                        lenis.scrollTo(target, { duration: 1.8, offset: -150 });
+                        lenis.scrollTo(target, { duration: 1.8, offset: -120 });
                     }
                 });
             });
