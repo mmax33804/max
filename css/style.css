@@ -892,6 +892,7 @@ body {
     .draggable-area {
         height: 1041px !important;
         position: relative !important;
+        overflow: visible !important;
     }
     
     #proiecte {
@@ -1116,13 +1117,13 @@ body {
 
     /* Momente din proiecte (Absolute overlapping) */
     .draggable-area {
-        height: calc(215vw + 70px) !important; /* Calcul dinamic bazat pe latimea ecranului ca sa incapa perfect Tropicana pe orice telefon */
         display: block !important;
         position: relative !important;
         padding-bottom: 0 !important;
-        margin: 0 20px !important;
-        width: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
         box-sizing: border-box !important;
+        overflow: visible !important;
     }
     .draggable {
         position: absolute !important;
