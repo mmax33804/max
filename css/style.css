@@ -198,7 +198,7 @@ body {
         .nav-links {
             display: flex;
             gap: 12px;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
             position: absolute;
             left: 50%;
@@ -328,6 +328,7 @@ body {
             border: 1px solid #E8E8E8;
             border-radius: 12px;
             width: 100%;
+            max-width: 100%;
             max-width: 1320px;
             padding: 0 100px;
             box-sizing: border-box;
@@ -782,7 +783,8 @@ body {
             padding-top: 40px;
             padding-bottom: 40px;
             border-top: 1px solid #E8E8E8;
-            width: 1320px;
+            width: 100%;
+            max-width: 1320px;
             margin: 0 auto;
             box-sizing: border-box;
         }
@@ -1738,100 +1740,53 @@ body {
 
 
 /* --- Notebook / Small Desktop (851px - 1440px) --- */
-@media (min-width: 1025px) and (max-width: 1600px) {
-    /* Micsoram paddingul masiv de desktop ca sa lase loc continutului */
+
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* For smaller laptops, we specifically scale down the massive fonts and cards so they fit nicely */
     .container {
-        padding: 0 60px !important;
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+        max-width: 100% !important;
     }
-
-    /* Redimensionam zona de drag and drop ca sa arate bine */
-    .draggable-area {
-        height: 700px !important;
+    .footer-content {
+        width: 100% !important;
+        max-width: 1320px !important;
     }
-
-    /* Scalam cardurile si le ajustam coordonatele la stanga/dreapta ca sa incapa pe un laptop mic */
-    .draggable[data-image*="conde"] { 
-        width: 250px !important; 
-        left: calc(50% - 100px) !important; 
-        top: 0 !important; 
-    }
-    .draggable[data-image*="acer"] { 
-        width: 200px !important; 
-        left: calc(50% + 150px) !important; 
-        top: 90px !important; 
-    }
-    .draggable[data-image*="uicapture"] { 
-        width: 180px !important; 
-        left: calc(50% + 240px) !important; 
-        top: 120px !important; 
-    }
-    .draggable[data-image*="lego"] { 
-        width: 280px !important; 
-        left: calc(50% - 330px) !important; 
-        top: 300px !important; 
-    }
-    .draggable[data-image*="tropicana"] { 
-        width: 250px !important; 
-        left: calc(50% - 360px) !important; 
-        top: 340px !important; 
-    }
-
     
-    /* Prevenire suprapunere meniu pe laptop */
-    .nav-links {
-        position: static !important;
-        transform: none !important;
-        gap: 8px !important;
-        font-size: 16px !important;
+    /* 1. Scale down Draggable Cards Area */
+    .draggable-area {
+        transform: scale(calc((100vw - 160px) / 1320));
+        transform-origin: top center;
+        margin-bottom: calc((100vw - 160px) / 1320 * 976px - 976px) !important;
     }
-    .nav-item {
-        padding: 6px 10px !important;
+    /* 2. Scale down Hero Fonts */
+    .hero-text {
+        font-size: 28px !important; /* Scaled down from 38px */
     }
-
-    /* Reducem inaltimea masiva a blocurilor de portofoliu */
+    
+    /* 3. Scale down Section Titles */
+    .section-title {
+        font-size: 26px !important; /* Scaled down from 32px */
+    }
+    
+    /* 4. Scale down Project Detail Cards and Images */
     .project-detail-card {
-        height: 400px !important;
+        height: 400px !important; /* Scaled down from 514px, image shrinks naturally! */
     }
-    .pd-content {
-        padding: 30px !important;
+    .pd-title {
+        font-size: 20px !important; /* Scaled down from 24px */
     }
-
-    /* Ajustam inaltimea headerului/bazei */
-    .hero-content {
-        height: 450px !important;
+    .pd-body {
+        font-size: 14px !important; /* Scaled down from 16px */
     }
+    .pd-info {
+        padding: 20px 40px !important; /* Compact padding */
+    }
+    
+    /* Leave the Navbar exactly as is so it doesn't get "too small"! */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ============================================
    CV DOWNLOAD DROPDOWN
    ============================================ */
