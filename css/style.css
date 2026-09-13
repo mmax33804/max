@@ -1050,7 +1050,7 @@ body {
     .draggable-area .drag-project-card:nth-child(2) {
         position: absolute !important;
         width: 320px !important;
-        height: 480px !important;
+        height: 550px !important;
         top: 194px !important;
         left: 50% !important;
         transform: translateX(calc(-50% + 20px)) !important;
@@ -2015,17 +2015,48 @@ body {
         margin-top: 0 !important;
         width: 100% !important;
     }
-}
 
+/* --- PERFECT MOBILE OVERLAYS (NO HTML CHANGES) --- */
+    .project-detail-card {
+        position: relative !important;
+        height: 550px !important;
+        min-height: 550px !important;
+        padding: 10px !important;
+    }
 
-    /* --- OVERLAYS ON IMAGE --- */
-    .desktop-only-footer { display: none !important; }
-    
-    .pd-likes.mobile-only-overlay {
+    .pd-image {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 300 / 234 !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+    }
+
+    .pd-info {
+        position: static !important; /* Allow footer to position relative to card */
+        margin-top: auto !important;
+        margin-bottom: auto !important; /* Vertically center text */
+        padding: 0 10px 0 10px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .pd-footer {
+        position: absolute !important;
+        top: 10px !important;
+        left: 10px !important;
+        width: calc(100% - 20px) !important;
+        aspect-ratio: 300 / 234 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        pointer-events: none !important;
+    }
+
+    .pd-likes {
         display: flex !important;
         position: absolute !important;
         top: 10px !important;
         right: 10px !important;
+        margin: 0 !important;
         width: 100px !important;
         height: 28px !important;
         background-color: #F2F2F2 !important;
@@ -2036,15 +2067,15 @@ body {
         justify-content: center !important;
         align-items: center !important;
         color: #333333 !important;
-        z-index: 10 !important;
+        pointer-events: auto !important;
     }
 
-    .pd-link.mobile-only-overlay {
+    .pd-link {
         display: flex !important;
         position: absolute !important;
         bottom: 10px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        left: 10px !important;
+        margin: 0 !important;
         width: calc(100% - 20px) !important;
         height: 40px !important;
         background-color: #F2F2F2 !important;
@@ -2056,45 +2087,13 @@ body {
         font-weight: 600 !important;
         color: #333333 !important;
         text-decoration: none !important;
-        box-sizing: border-box !important;
-        z-index: 10 !important;
+        pointer-events: auto !important;
         transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease;
     }
     
-    .pd-link.mobile-only-overlay:active {
-        transform: translateX(-50%) scale(0.96) !important;
+    .pd-link:active {
+        transform: scale(0.96) !important;
     }
 
-    .pd-image {
-        position: relative !important; /* Extremely important for overlays */
-        width: 100% !important;
-        margin: 0 0 10px 0 !important;
-        padding: 0 !important;
-        height: auto !important;
-        aspect-ratio: 300 / 234 !important;
-    }
-
-    .project-detail-card {
-        height: 530px !important; /* Safe height for all text */
-        min-height: 530px !important;
-        padding: 10px !important;
-    }
-
-    .pd-info {
-        padding: 0 10px 10px 10px !important; /* 10px stanga, dreapta, jos */
-    }
-    
-    /* Remove the old likes that might be floating */
-    .pd-likes:not(.mobile-only-overlay) {
-        display: none !important;
-    }
-    
-    /* --- FIX PADDING FOR LAST CARD (UI CAPTURE) --- */
-    .sticky-card-wrapper:nth-child(4) .project-detail-card {
-        height: auto !important;
-        min-height: 570px !important; 
-        padding-bottom: 35px !important;
-    }
-    
     
 }
