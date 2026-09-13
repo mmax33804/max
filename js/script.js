@@ -131,6 +131,14 @@
                     }
                 });
             });
+            
+            // Open the first FAQ item by default on page load
+            if (faqItems.length > 0) {
+                // Use setTimeout to ensure DOM is fully rendered before calculating scrollHeight
+                setTimeout(() => {
+                    faqItems[0].querySelector('.faq-header').click();
+                }, 100);
+            }
 
             // Draggable logic ONLY (Modal removed)
             const dragItems = document.querySelectorAll('.draggable');
