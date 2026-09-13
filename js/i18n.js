@@ -113,6 +113,7 @@
 window.currentLanguage = 'ro';
 function changeLanguage(lang) {
     window.currentLanguage = lang;
+    localStorage.setItem('portfolio_lang', lang);
     const elements = document.querySelectorAll('[data-i18n]');
     
     // Swap text instantly (no animation)
@@ -198,13 +199,7 @@ i18n.ro['lang_ro'] = 'Rom&acirc;n&#259;';
 i18n.ro['lang_ru'] = 'Rus&#259;';
 i18n.ro['lang_en'] = 'Englez&#259;';
 
-i18n.ru['lang_ro'] = '&#1056;&#1091;&#1084;&#1099;&#1085;&#1089;&#1082;&#1080;&#1081;';
-i18n.ru['lang_ru'] = '&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;';
-i18n.ru['lang_en'] = '&#1040;&#1085;&#1075;&#1083;&#1080;&#1081;&#1089;&#1082;&#1080;&#1081;';
 
-i18n.en['lang_ro'] = 'Romanian';
-i18n.en['lang_ru'] = 'Russian';
-i18n.en['lang_en'] = 'English';
 
 // Project Details Translations
 i18n.ro['pd1_title'] = 'Redesign Conde nast traveller';
@@ -258,3 +253,36 @@ i18n.en['pd4_likes'] = '2 stars';
 i18n.ro['pd_to_project'] = 'Către proiect';
 i18n.ru['pd_to_project'] = 'К проекту';
 i18n.en['pd_to_project'] = 'To project';
+
+// Additional keys
+i18n.ro['drag_card'] = 'Trage cardul';
+i18n.ru['drag_card'] = '&#1055;&#1086;&#1090;&#1103;&#1085;&#1080;';
+i18n.en['drag_card'] = 'Drag card';
+
+// Auto-detect browser language on load
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Check if user already picked a language manually
+    let savedLang = localStorage.getItem('portfolio_lang');
+    
+    if (savedLang && i18n[savedLang]) {
+        if (savedLang !== 'ro') {
+            changeLanguage(savedLang);
+        }
+    } else {
+        // 2. If no saved choice, detect browser language
+        let browserLang = navigator.language || navigator.userLanguage;
+        browserLang = browserLang.toLowerCase();
+        
+        let detected = 'ro'; // Default
+        if (browserLang.startsWith('ru') || browserLang.startsWith('uk') || browserLang.startsWith('be')) {
+            detected = 'ru'; // Russian for RU, UA, BY
+        } else if (browserLang.startsWith('en') || (!browserLang.startsWith('ro') && !browserLang.startsWith('mo'))) {
+            // Default any unknown language to English, except if it's Romanian/Moldovan
+            detected = 'en'; 
+        }
+        
+        if (detected !== 'ro') {
+            changeLanguage(detected);
+        }
+    }
+});

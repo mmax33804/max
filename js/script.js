@@ -401,6 +401,8 @@ if (cvToggle && cvDropdown) {
     cvToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        var langD = document.querySelector('.lang-dropdown');
+        if (langD) langD.classList.remove('open');
         cvDropdown.classList.toggle('open');
         if (cvDropdown.classList.contains('open')) playPopupSound();
     });
@@ -423,7 +425,7 @@ if (cvToggle && cvDropdown) {
         const isMobile = window.innerWidth <= 1024;
         
         if (!isMobile) {
-            // Reset on desktop
+            // Reset transforms on desktop
             wrappers.forEach(w => {
                 const card = w.querySelector('.project-detail-card');
                 if (card) {
@@ -443,11 +445,7 @@ if (cvToggle && cvDropdown) {
             if (!currentCard) continue;
 
             const nextRect = nextWrapper.getBoundingClientRect();
-            
-            // Get dynamically where this card is supposed to stick
             const stickyTop = parseInt(window.getComputedStyle(currentWrapper).top) || 149;
-            
-            // The distance to animate over
             const transitionDistance = window.innerHeight * 0.5; 
             const distanceToSticky = nextRect.top - stickyTop;
             
@@ -455,21 +453,38 @@ if (cvToggle && cvDropdown) {
             if (distanceToSticky <= transitionDistance && distanceToSticky >= 0) {
                 progress = 1 - (distanceToSticky / transitionDistance);
             } else if (distanceToSticky < 0) {
-                progress = 1; // Fully covered
+                progress = 1;
             }
             
-            // Calculate 3D values
-            const scale = 1 - (progress * 0.06); // Shrink to 94%
-            const brightness = 1 - (progress * 0.35); // Darken to 65%
+            const scale = 1 - (progress * 0.06);
+            const brightness = 1 - (progress * 0.35);
             
             currentCard.style.transformOrigin = 'top center';
             currentCard.style.willChange = 'transform, filter';
             currentCard.style.transform = `scale(${scale})`;
             currentCard.style.filter = `brightness(${brightness})`;
         }
-        
         requestAnimationFrame(update3DStacking);
     }
     
     // Start the animation loop
     requestAnimationFrame(update3DStacking);
+
+
+// Global Dropdown Mutually Exclusive Logic
+document.addEventListener('click', function(e) {
+    const langD = document.querySelector('.lang-dropdown');
+    const cvD = document.querySelector('.cv-dropdown');
+    
+    // If we click on the langToggle, close CV
+    const langT = document.getElementById('langToggle');
+    if (langT && (langT.contains(e.target) || langT === e.target)) {
+        if (cvD) cvD.classList.remove('open');
+    }
+    
+    // If we click on the cvToggle, close Lang
+    const cvT = document.getElementById('cvToggle');
+    if (cvT && (cvT.contains(e.target) || cvT === e.target)) {
+        if (langD) langD.classList.remove('open');
+    }
+}, true); // Use capture phase to ensure it runs before their own toggles
