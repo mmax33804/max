@@ -892,7 +892,32 @@ body {
 /* --- Visibility Classes --- */
 .mobile-only { display: none !important; }
 
+
+/* --- Overlay Visibility --- */
+.mobile-only-overlay { display: none !important; }
+
 @media (max-width: 1024px) {
+
+    .project-detail-card {
+        height: 540px !important; /* Fixed */
+        min-height: 540px !important;
+        justify-content: flex-start !important; /* Align content to top */
+    }
+
+    .pd-image {
+        width: 85% !important;
+        margin: 0 auto 10px auto !important;
+        padding-top: 10px !important;
+    }
+
+    .pd-footer {
+        margin-top: 10px !important; /* Bring closer to paragraph */
+    }
+
+    .pd-link {
+        margin-top: 0px !important; /* Remove the extra 15px */
+    }
+
 
     .pd-likes {
         display: flex !important;
@@ -1334,8 +1359,8 @@ body {
         position: relative !important;
         flex-direction: column !important;
         width: 100% !important; /* Autoscale to container */
-        height: auto !important; /* Inaltime adaptiva */
-        min-height: auto !important;
+        height: 540px !important; /* Fixed */
+        min-height: 540px !important;
         padding: 10px !important;
         box-sizing: border-box !important;
         align-items: center !important;
@@ -1346,7 +1371,8 @@ body {
         /* Am sters umbra masiva care crea blocul gri urias */
     }
     .pd-image {
-        width: 100% !important;
+        width: 85% !important;
+        margin: 0 auto !important;
         height: auto !important;
         aspect-ratio: 300 / 234 !important; /* Mentine proportia */
         padding: 0 !important;
@@ -1956,4 +1982,119 @@ body {
     .pd-link:active {
         transform: scale(0.96);
     }
+}
+
+
+@media (max-width: 1024px) {
+    /* --- FINAL MOBILE CARD FIXES --- */
+    .project-detail-card {
+        height: 650px !important; /* Safe height for all cards */
+        min-height: 650px !important;
+        justify-content: flex-start !important;
+    }
+    
+    .pd-image {
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+        height: auto !important;
+        aspect-ratio: 300 / 234 !important;
+        padding: 0 !important;
+    }
+    
+    .pd-info {
+        flex: 0 0 auto !important;
+        margin-top: auto !important;
+        margin-bottom: auto !important; /* Vertical centering between image and bottom */
+    }
+    
+    .pd-footer {
+        margin-top: 15px !important; /* Exact, equal gap above button on all cards */
+    }
+    
+    .pd-link {
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+}
+
+
+    /* --- OVERLAYS ON IMAGE --- */
+    .desktop-only-footer { display: none !important; }
+    
+    .pd-likes.mobile-only-overlay {
+        display: flex !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        width: 100px !important;
+        height: 28px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        color: #333333 !important;
+        z-index: 10 !important;
+    }
+
+    .pd-link.mobile-only-overlay {
+        display: flex !important;
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 20px) !important;
+        height: 40px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #333333 !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+        z-index: 10 !important;
+        transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .pd-link.mobile-only-overlay:active {
+        transform: translateX(-50%) scale(0.96) !important;
+    }
+
+    .pd-image {
+        position: relative !important; /* Extremely important for overlays */
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        aspect-ratio: 300 / 234 !important;
+    }
+
+    .project-detail-card {
+        height: 530px !important; /* Safe height for all text */
+        min-height: 530px !important;
+        padding: 10px !important;
+    }
+
+    .pd-info {
+        padding: 0 10px 10px 10px !important; /* 10px stanga, dreapta, jos */
+    }
+    
+    /* Remove the old likes that might be floating */
+    .pd-likes:not(.mobile-only-overlay) {
+        display: none !important;
+    }
+    
+    /* --- FIX PADDING FOR LAST CARD (UI CAPTURE) --- */
+    .sticky-card-wrapper:nth-child(4) .project-detail-card {
+        height: auto !important;
+        min-height: 570px !important; 
+        padding-bottom: 35px !important;
+    }
+    
+    
 }
