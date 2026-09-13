@@ -49,7 +49,18 @@
             footerGroups.forEach(function(title) {
                 title.addEventListener('click', function() {
                     if (window.innerWidth <= 1024) {
-                        this.parentElement.classList.toggle('active');
+                        const parent = this.parentElement;
+                        const wasActive = parent.classList.contains('active');
+                        
+                        // Close all footer groups first
+                        document.querySelectorAll('.footer-group').forEach(group => {
+                            group.classList.remove('active');
+                        });
+                        
+                        // Open only the one that was clicked (if it wasn't already open)
+                        if (!wasActive) {
+                            parent.classList.add('active');
+                        }
                     }
                 });
             });
