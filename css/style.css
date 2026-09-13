@@ -888,7 +888,107 @@ body {
 
 
 /* --- MOBILE RESPONSIVE (360px checkpoint / 1 column) --- */
+
+/* --- Visibility Classes --- */
+.mobile-only { display: none !important; }
+
 @media (max-width: 1024px) {
+
+    .pd-likes {
+        display: flex !important;
+        position: absolute !important;
+        top: 17px !important;
+        right: 17px !important;
+        width: 100px !important;
+        height: 28px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        color: #333333 !important;
+        z-index: 10 !important;
+    }
+
+
+    .pd-link {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 40px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #333333 !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+        margin-top: 15px !important;
+    }
+
+
+    .pd-body {
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.4 !important;
+    }
+
+
+    /* --- Mobile Overlay Buttons --- */
+    .desktop-only { display: none !important; }
+    .mobile-only { display: flex !important; }
+    
+    .pd-likes.mobile-only {
+        display: flex !important;
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        width: 100px !important;
+        height: 28px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        color: #333333 !important;
+        z-index: 10 !important;
+    }
+
+    .pd-link.mobile-only {
+        position: absolute !important;
+        bottom: 20px !important; /* 10px padding of image + 10px offset */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 20px) !important;
+        height: 40px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #333333 !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+        z-index: 10 !important;
+        transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease;
+    }
+    .pd-link.mobile-only:active {
+        transform: translateX(-50%) scale(0.96) !important;
+    }
+
     /* --- DRAGGABLE CARDS EXACT MOBILE LAYOUT --- */
     .draggable-area {
         height: 991px !important;
@@ -1235,7 +1335,7 @@ body {
         flex-direction: column !important;
         width: 100% !important; /* Autoscale to container */
         height: auto !important; /* Inaltime adaptiva */
-        min-height: 400px !important;
+        min-height: auto !important;
         padding: 10px !important;
         box-sizing: border-box !important;
         align-items: center !important;
@@ -1278,9 +1378,9 @@ body {
         margin: 0 !important;
     }
     .pd-body {
-        font-size: 16px !important;
-        font-weight: 500 !important;
-        line-height: 1.25 !important;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        line-height: 1.4 !important;
         margin-top: 0 !important;
         margin-bottom: 6px !important;
     }
@@ -1292,38 +1392,8 @@ body {
         margin-top: 16px !important; /* distanta fixa fata de paragraf */
         padding-top: 0 !important;
     }
-    .pd-link {
-        width: 100% !important;
-        height: 40px !important;
-        background-color: #F2F2F2 !important;
-        border: 1px solid #E8E8E8 !important;
-        border-radius: 6px !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        color: #333333 !important;
-        text-decoration: none !important;
-        box-sizing: border-box !important;
-    }
-    .pd-likes {
-        display: flex !important;
-        position: absolute !important;
-        top: 17px !important;
-        right: 17px !important;
-        width: 100px !important;
-        height: 28px !important;
-        background-color: #F2F2F2 !important;
-        border: 1px solid #E8E8E8 !important;
-        border-radius: 6px !important;
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        justify-content: center !important;
-        align-items: center !important;
-        color: #333333 !important;
-        z-index: 10 !important;
-    }
+    
+    
 
     /* Recenzii (1 coloana) */
     .reviews-list {
@@ -1882,9 +1952,7 @@ body {
         opacity: 0.7;
     }
 
-    .pd-link {
-        transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease;
-    }
+    
     .pd-link:active {
         transform: scale(0.96);
     }
