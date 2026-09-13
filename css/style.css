@@ -46,8 +46,8 @@ body.loading {
     color: #333333;
     line-height: 1;
     letter-spacing: -0.5px;
-    width: 350px;
-    text-align: right;
+    width: auto;
+    text-align: left;
 }
 
 .preloader-counter {
@@ -56,7 +56,7 @@ body.loading {
     color: #666666;
     line-height: 1;
     font-variant-numeric: tabular-nums;
-    width: 50px;
+    width: auto;
     text-align: left;
 }
 
@@ -626,6 +626,7 @@ body {
         
         .faq-icon {
             width: 24px;
+            flex-shrink: 0;
             height: 24px;
             padding: 12px;
             border-radius: 10px;
@@ -664,8 +665,8 @@ body {
         }
 
         .review-card {
-            background-color: #F2F2F2;
-            border: 1px solid var(--border-btn);
+            background-color: #FAFAFA;
+            border:  1px solid #EAEAEA;
             border-radius: 6px;
             padding: 32px;
             display: flex;
@@ -700,8 +701,9 @@ body {
 
         .review-footer {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 24px;
         }
 
         .review-user {
@@ -713,8 +715,16 @@ body {
         .review-avatar {
             width: 48px;
             height: 48px;
-            background-color: #D9D9D9;
+            background-color: #E6E6E6;
             border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .review-avatar svg {
+            width: 24px;
+            height: 24px;
+            fill: #777777;
         }
 
         .review-user-info {
@@ -734,12 +744,27 @@ body {
         }
 
         .review-link {
-            font-size: 14px;
-            color: #555555;
-            text-decoration: none;
-        }.review-link:hover {
-            text-decoration: underline;
-        }
+        width: 100% !important;
+        height: 40px !important;
+        background-color: #F2F2F2 !important;
+        border: 1px solid #E8E8E8 !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #333333 !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+        transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease, color 0.3s ease;
+    }
+    .review-link:active {
+        transform: scale(0.96) !important;
+    }
+    .review-link:hover {
+        background-color: #E8E8E8 !important;
+    }
         /* --- FOOTER --- */
                 .site-footer {
             width: 100%;
@@ -1443,18 +1468,8 @@ body {
     .reviews-list {
         width: 100% !important;
     }
-    .review-header {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding-left: 0 !important;
-        gap: 12px !important;
-    }
-    .review-footer {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding-left: 0 !important;
-        gap: 12px !important;
-    }
+    
+    
 
     
     
@@ -2144,6 +2159,15 @@ body {
         transform: rotate(-135deg);
     }
 
+    
+    /* Force height: auto on ALL draggable cards on mobile, beating nth-child(2) specificity */
+    body .draggable-area .drag-project-card,
+    body .draggable-area .drag-project-card:nth-child(2),
+    body .draggable-area .drag-project-card:nth-child(n) {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
     /* SINGLE SOURCE OF TRUTH FOR MODAL CARD WIDTH */
     .mobile-card-modal .draggable,
     .mobile-card-modal .draggable[data-image] {
@@ -2175,7 +2199,7 @@ body {
     .preloader-brand {
         font-size: 14px;
         letter-spacing: 0;
-        width: 220px;
+        width: auto;
     }
     .preloader-counter {
         font-size: 14px;
@@ -2199,7 +2223,7 @@ body {
     .footer-content {
         flex-direction: column !important;
         align-items: flex-start !important;
-        gap: 24px !important;
+        gap: 40px !important;
         width: calc(100% - 40px) !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
@@ -2294,3 +2318,49 @@ body {
         padding-bottom: calc(20px + env(safe-area-inset-bottom)) !important;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .faq-item {
+        padding: 0 16px !important; /* Less padding to give text more room */
+    }
+    .faq-question {
+        font-size: 14px !important; /* Slightly smaller text so it fits better */
+        padding-right: 12px !important; /* Keep it away from the icon */
+    }
+    .faq-icon {
+        width: 20px !important;
+        height: 20px !important;
+        padding: 8px !important;
+    }
+}
+
+
+    /* SINGLE SOURCE OF TRUTH FOR MODAL CARD WIDTH AND HEIGHT */
+    body .mobile-card-modal .draggable,
+    body .mobile-card-modal .draggable[data-image],
+    body .mobile-card-modal .draggable-area .drag-project-card:nth-child(2),
+    body .mobile-card-modal .draggable-area .drag-project-card {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin: 0 !important;
+        width: calc(100vw - 60px) !important;
+        max-width: 450px !important;
+        height: auto !important; /* Fix the 550px height bug */
+        min-height: 0 !important;
+        z-index: 1 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* When opened full in modal, show the WHOLE image (toata intreaga) */
+    body .mobile-card-modal .draggable img,
+    body .mobile-card-modal .draggable[data-image] img {
+        aspect-ratio: auto !important; /* Remove crop */
+        object-fit: contain !important; /* Show whole image */
+        width: 100% !important;
+        height: auto !important;
+    }
