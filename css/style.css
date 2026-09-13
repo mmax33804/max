@@ -82,6 +82,8 @@ body.loading {
 
 
 :root {
+    color-scheme: light;
+
             --text-main: #333333;
             --text-muted: #666666;
             --text-light: #999999;
