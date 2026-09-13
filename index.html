@@ -7,44 +7,115 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1789313782">
+    <link rel="stylesheet" href="css/style.css?v=1789324765">
 </head>
 <body class="loading">
     <!-- PRELOADER -->
     <div id="preloader">
         <div class="preloader-content">
             <div class="preloader-header">
-                <span class="preloader-brand" data-i18n="preloader_brand">Se &icirc;ncarc&#259;...</span>
+                <span class="preloader-brand">
+                    <span id="preloaderText" style="display: inline-block; transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); transform: translateY(0);">Se ini&#539;ializeaz&#259;</span><span id="preloaderDots" style="display:inline-block; width:20px; text-align:left;"></span>
+                </span>
                 <span class="preloader-counter" id="preloaderCounter">0%</span>
-            </div>
-            <div class="preloader-progress-bar">
-                <div class="preloader-progress-fill"></div>
             </div>
         </div>
     </div>
 
     <script>
-    // Preloader starts immediately
     document.addEventListener('DOMContentLoaded', function() {
+        // Autotranslate logic
+        var storedLang = localStorage.getItem('portfolio_lang');
+        var browserLang = navigator.language.slice(0, 2).toLowerCase();
+        var lang = storedLang || (['ru', 'en'].includes(browserLang) ? browserLang : 'ro');
+        
+        var phrases = {
+            'ro': ['Se ini&#539;ializeaz&#259;', 'Se aliniaz&#259; pixelii', 'Se preg&#259;te&#537;te designul'],
+            'ru': ['Инициализация', 'Выравнивание пикселей', 'Подготовка дизайна'],
+            'en': ['Initializing', 'Aligning pixels', 'Preparing design']
+        };
+        var currentPhrases = phrases[lang] || phrases['ro'];
+        
+        var pText = document.getElementById('preloaderText');
+        var pDots = document.getElementById('preloaderDots');
         var counter = document.getElementById('preloaderCounter');
-        var fill = document.querySelector('.preloader-progress-fill');
+        
+        if (pText) pText.innerHTML = currentPhrases[0];
+        
+        // Phrases animation - Premium Blur Fade
+        var phraseIndex = 0;
+        var phraseTimer = setInterval(function() {
+            phraseIndex++;
+            if (phraseIndex < currentPhrases.length && pText) {
+                pText.style.transition = 'opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease';
+                pText.style.opacity = '0';
+                pText.style.transform = 'translateY(2px)';
+                pText.style.filter = 'blur(3px)';
+                
+                setTimeout(function() {
+                    pText.innerHTML = currentPhrases[phraseIndex];
+                    pText.style.transition = 'none';
+                    pText.style.transform = 'translateY(-2px)';
+                    
+                    void pText.offsetWidth;
+                    
+                    pText.style.transition = 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease';
+                    pText.style.opacity = '1';
+                    pText.style.transform = 'translateY(0)';
+                    pText.style.filter = 'blur(0px)';
+                }, 250);
+            }
+        }, 850);
+
+        // Dots animation
+        var dotCount = 0;
+        var dotTimer = setInterval(function() {
+            dotCount = (dotCount + 1) % 4;
+            if (pDots) pDots.innerText = '.'.repeat(dotCount);
+        }, 350);
+
+        // Counter logic (Slowed slightly to fit the phrases)
         var count = 0;
         var timer = setInterval(function() {
-            count += 1.67;
+            count += 0.8; // 2.5 seconds total
             if (count >= 100) {
                 count = 100;
                 clearInterval(timer);
+                clearInterval(phraseTimer);
+                clearInterval(dotTimer);
                 setTimeout(function() {
                     var p = document.getElementById('preloader');
                     if (p) {
                         p.classList.add('loaded');
                         document.body.classList.remove('loading');
+                        
+                        // Play premium UI "Pop" sound
+                        try {
+                            var ctx = new (window.AudioContext || window.webkitAudioContext)();
+                            if (ctx.state === 'running') {
+                                var osc = ctx.createOscillator();
+                                var gain = ctx.createGain();
+                                osc.connect(gain);
+                                gain.connect(ctx.destination);
+                                
+                                osc.type = 'sine';
+                                osc.frequency.setValueAtTime(800, ctx.currentTime);
+                                osc.frequency.exponentialRampToValueAtTime(1400, ctx.currentTime + 0.05);
+                                
+                                gain.gain.setValueAtTime(0, ctx.currentTime);
+                                gain.gain.linearRampToValueAtTime(0.15, ctx.currentTime + 0.02);
+                                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+                                
+                                osc.start(ctx.currentTime);
+                                osc.stop(ctx.currentTime + 0.3);
+                            }
+                        } catch(e) { console.log('Audio blocked by browser'); }
+
                         setTimeout(function() { p.remove(); }, 800);
                     }
                 }, 300);
             }
             if (counter) counter.innerText = Math.floor(count) + '%';
-            if (fill) fill.style.width = count + '%';
         }, 20);
     });
     </script>
@@ -309,28 +380,28 @@
             <div class="faq-item">
                 <div class="faq-header">
                     <span class="faq-question" data-i18n="faq_q1">Experien&#539;a &icirc;n echip&#259;</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#333333"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
                 <div class="faq-answer" data-i18n="faq_a1">Am o experien&#539;&#259; de 1,5 ani lucr&acirc;nd at&acirc;t &icirc;n echipe din Republica Moldova, c&acirc;t &#537;i la nivel interna&#539;ional. Am activat ca Web Designer la Sykors.md, ocup&acirc;ndu-m&#259; de web design &#537;i grafic&#259; pentru social media. Ulterior, am colaborat ca UX/UI Designer freelancer cu echipe din Rusia, dezvolt&acirc;nd proiecte de la zero, pe care le pute&#539;i vedea &icirc;n sec&#539;iunea de Recenzii.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-header">
                     <span class="faq-question" data-i18n="faq_q2">Softurile pe care le folosesc &#537;i ce &#537;tiu s&#259; fac &icirc;n ele</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#333333"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
                 <div class="faq-answer" data-i18n="faq_a2">Principalul meu instrument este Figma (design vizual, analiz&#259; UX, componente, prototipare/anima&#539;ii &#537;i dev handoff). Folosesc &#537;i Photoshop pentru mockup-uri, Visual Studio Code pentru integrare (HTML/CSS), precum &#537;i platforma Tilda pentru web development.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-header">
                     <span class="faq-question" data-i18n="faq_q3">Cel mai de succes proiect din portofoliu &#537;i de ce?</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#333333"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
                 <div class="faq-answer" data-i18n="faq_a3">Cel mai de succes proiect este &bdquo;Conde Nast Traveller&rdquo;. Acolo m-am concentrat profund pe arhitectura UX, cre&acirc;nd o experien&#539;&#259; a utilizatorului fluid&#259; &#537;i intuitiv&#259;. Efortul a fost validat de comunitate, proiectul adun&acirc;nd peste 300 de aprecieri.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-header">
                     <span class="faq-question" data-i18n="faq_q4">Unde am studiat?</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#333333"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
                 <div class="faq-answer" data-i18n="faq_a4">Am absolvit &#537;coala online Uprock din Moscova, unde am dob&acirc;ndit baze avansate de UI &#537;i UX. &Icirc;n prezent, &icirc;mi continui preg&#259;tirea academic&#259; la ULIM, &icirc;n cadrul facult&#259;&#539;ii de Tehnologii Informa&#539;ionale.</div>
             </div>
@@ -412,25 +483,42 @@
         <div class="footer-content">
             <a href="#" class="footer-left">Maxim</a>
             <div class="footer-right">
-                <div class="tooltip-container">
-                    <a href="https://t.me/Scheptic" class="footer-link" target="_blank">Telegram</a>
-                    <span class="tooltip-text">@Scheptic</span>
+                <div class="footer-group">
+                    <div class="footer-group-title">
+                        <span data-i18n="community_networks">Re&#539;ele de comunitate</span>
+                        <svg class="footer-plus-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                    </div>
+                    <div class="footer-group-content">
+                        <div class="tooltip-container">
+                            <a href="https://www.behance.net/mmax33804" class="footer-link" target="_blank">Behance</a>
+                            <span class="tooltip-text">Maxim</span>
+                        </div>
+                        <div class="tooltip-container">
+                            <a href="https://www.linkedin.com/in/maxim-pintea-2a794421a/?locale=en" class="footer-link" target="_blank">Linkedin</a>
+                            <span class="tooltip-text">Maxim</span>
+                        </div>
+                        <div class="tooltip-container">
+                            <a href="https://github.com/mmax33804" class="footer-link" target="_blank">GitHub</a>
+                            <span class="tooltip-text">Maxim</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="tooltip-container">
-                    <a href="https://www.instagram.com/scheptic33804/" class="footer-link" target="_blank">Instagram</a>
-                    <span class="tooltip-text">scheptic33804</span>
-                </div>
-                <div class="tooltip-container">
-                    <a href="https://www.behance.net/mmax33804" class="footer-link" target="_blank">Behance</a>
-                    <span class="tooltip-text">Maxim</span>
-                </div>
-                <div class="tooltip-container">
-                    <a href="https://www.linkedin.com/in/maxim-pintea-2a794421a/?locale=en" class="footer-link" target="_blank">Linkedin</a>
-                    <span class="tooltip-text">Maxim</span>
-                </div>
-                <div class="tooltip-container">
-                    <a href="https://github.com/mmax33804" class="footer-link" target="_blank">GitHub</a>
-                    <span class="tooltip-text">Maxim</span>
+                
+                <div class="footer-group">
+                    <div class="footer-group-title">
+                        <span data-i18n="social_networks">Re&#539;ele sociale</span>
+                        <svg class="footer-plus-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                    </div>
+                    <div class="footer-group-content">
+                        <div class="tooltip-container">
+                            <a href="https://t.me/Scheptic" class="footer-link" target="_blank">Telegram</a>
+                            <span class="tooltip-text">@Scheptic</span>
+                        </div>
+                        <div class="tooltip-container">
+                            <a href="https://www.instagram.com/scheptic33804/" class="footer-link" target="_blank">Instagram</a>
+                            <span class="tooltip-text">scheptic33804</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -440,7 +528,7 @@
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
     
-<script src="js/script.js?v=1789313054"></script>
+<script src="js/script.js?v=1789323966"></script>
 <script src="js/i18n.js"></script>
 </body>
 </html>

@@ -31,6 +31,8 @@
         'faq_title': '&Icirc;ntreb&#259;ri &#537;i r&#259;spunsuri',
         
         'reviews_title': 'Recenzii (3)',
+        'community_networks': 'Re&#539;ele de comunitate',
+        'social_networks': 'Re&#539;ele sociale',
         'review_freelance': 'Proiect Freelance',
         'review_view_project': 'Vezi proiectul',
         
@@ -67,6 +69,8 @@
         
         'faq_title': '&#1042;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099; &#1080; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;',
         'reviews_title': '&#1054;&#1090;&#1079;&#1099;&#1074;&#1099; (3)',
+        'community_networks': 'Сети сообществ',
+        'social_networks': 'Социальные сети',
         'review_freelance': '&#1060;&#1088;&#1080;&#1083;&#1072;&#1085;&#1089; &#1087;&#1088;&#1086;&#1077;&#1082;&#1090;',
         'review_view_project': '&#1057;&#1084;&#1086;&#1090;&#1088;&#1077;&#1090;&#1100; &#1087;&#1088;&#1086;&#1077;&#1082;&#1090;',
         
@@ -103,6 +107,8 @@
         
         'faq_title': 'Frequently Asked Questions',
         'reviews_title': 'Reviews (3)',
+        'community_networks': 'Community networks',
+        'social_networks': 'Social networks',
         'review_freelance': 'Freelance Project',
         'review_view_project': 'View project',
         

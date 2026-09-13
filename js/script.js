@@ -13,10 +13,47 @@
                     document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
                     
                     document.body.classList.toggle('menu-open');
-
                     
-                    });
+                    // Subtle Menu Interaction Sound
+                    try {
+                        var ctx = new (window.AudioContext || window.webkitAudioContext)();
+                        var osc = ctx.createOscillator();
+                        var gain = ctx.createGain();
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        
+                        var isOpen = document.body.classList.contains('menu-open');
+                        
+                        osc.type = 'sine';
+                        if (isOpen) {
+                            osc.frequency.setValueAtTime(400, ctx.currentTime);
+                            osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.05);
+                        } else {
+                            osc.frequency.setValueAtTime(600, ctx.currentTime);
+                            osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.05);
+                        }
+                        
+                        gain.gain.setValueAtTime(0, ctx.currentTime);
+                        gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.02);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+                        
+                        osc.start(ctx.currentTime);
+                        osc.stop(ctx.currentTime + 0.1);
+                    } catch(e) { }
+                    
+                });
             }
+            
+            // Footer Accordion Logic (Mobile)
+            const footerGroups = document.querySelectorAll('.footer-group-title');
+            footerGroups.forEach(function(title) {
+                title.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) {
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+
             // Language Dropdown Logic
             const langDropdown = document.querySelector('.lang-dropdown');
             const langToggle = document.getElementById('langToggle');
