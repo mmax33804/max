@@ -2096,4 +2096,9 @@ body {
     }
 
     
+
+    /* --- WOW ANIMATIONS (MOBILE ONLY) --- */
+    .hero-title.hero-subtitle50% { transform: translateY(-8px) rotate(3deg); }
+    }
 }
+

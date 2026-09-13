@@ -411,3 +411,65 @@ if (cvToggle && cvDropdown) {
         }
     });
 }
+
+
+
+
+/* --- iOS 3D STICKY STACK (MOBILE ONLY) --- */
+    // 2. 3D Sticky Stacking (iOS Style)
+    const wrappers = document.querySelectorAll('.sticky-card-wrapper');
+    
+    function update3DStacking() {
+        const isMobile = window.innerWidth <= 1024;
+        
+        if (!isMobile) {
+            // Reset on desktop
+            wrappers.forEach(w => {
+                const card = w.querySelector('.project-detail-card');
+                if (card) {
+                    card.style.transform = '';
+                    card.style.filter = '';
+                }
+            });
+            requestAnimationFrame(update3DStacking);
+            return;
+        }
+
+        for (let i = 0; i < wrappers.length - 1; i++) {
+            const currentWrapper = wrappers[i];
+            const nextWrapper = wrappers[i + 1];
+            const currentCard = currentWrapper.querySelector('.project-detail-card');
+            
+            if (!currentCard) continue;
+
+            const nextRect = nextWrapper.getBoundingClientRect();
+            
+            // Get dynamically where this card is supposed to stick
+            const stickyTop = parseInt(window.getComputedStyle(currentWrapper).top) || 149;
+            
+            // The distance to animate over
+            const transitionDistance = window.innerHeight * 0.5; 
+            const distanceToSticky = nextRect.top - stickyTop;
+            
+            let progress = 0;
+            if (distanceToSticky <= transitionDistance && distanceToSticky >= 0) {
+                progress = 1 - (distanceToSticky / transitionDistance);
+            } else if (distanceToSticky < 0) {
+                progress = 1; // Fully covered
+            }
+            
+            // Calculate 3D values
+            const scale = 1 - (progress * 0.06); // Shrink to 94%
+            const brightness = 1 - (progress * 0.35); // Darken to 65%
+            
+            currentCard.style.transformOrigin = 'top center';
+            currentCard.style.willChange = 'transform, filter';
+            currentCard.style.transform = `scale(${scale})`;
+            currentCard.style.filter = `brightness(${brightness})`;
+        }
+        
+        requestAnimationFrame(update3DStacking);
+    }
+    
+    // Start the animation loop
+    requestAnimationFrame(update3DStacking);
