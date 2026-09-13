@@ -1,12 +1,19 @@
 // Preloader moved to inline script in index.html
         document.addEventListener('DOMContentLoaded', function() {
             
+
             // Mobile Menu Toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', function(e) {
                     e.preventDefault();
+                    
+                    // Calculate scrollbar width to prevent layout shift on desktop
+                    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                    document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+                    
                     document.body.classList.toggle('menu-open');
+
                     
                     });
             }

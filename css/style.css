@@ -115,8 +115,7 @@ body {
         /* --- NAVBAR --- */
                         .mobile-menu-btn {
         display: none !important;
-        align-items: center !important;
-        justify-content: center !important;
+        place-items: center !important;
         width: 40px !important;
         height: 40px !important;
         background-color: #F9F9F9 !important;
@@ -1119,9 +1118,12 @@ body {
     }
 
     /* --- MOBILE MENU FULLSCREEN LAYOUT --- */
+
     body.menu-open {
         overflow: hidden !important;
+        padding-right: var(--scrollbar-width) !important;
     }
+
     
     body.menu-open .navbar {
         position: fixed !important;
@@ -1129,6 +1131,7 @@ body {
         left: 0 !important;
         width: 100% !important;
         height: 100vh !important;
+        padding-right: calc(20px + var(--scrollbar-width)) !important;
         flex-wrap: wrap !important;
         align-items: center !important;
         align-content: flex-start !important;
@@ -1209,9 +1212,8 @@ body {
         margin-left: 8px !important;
     }
     .mobile-menu-btn {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: grid !important;
+        place-items: center !important;
         width: 40px !important;
         height: 40px !important;
         padding: 0 !important;
@@ -1559,25 +1561,22 @@ body {
         left: auto !important;
         right: auto !important;
         margin: 0 !important;
-        width: 280px !important;
-        max-width: 90vw !important;
+        width: calc(100vw - 60px) !important;
+        max-width: 400px !important;
         height: auto !important;
         z-index: 1 !important;
-        transform: scale(1.05) !important; 
+        transform: none !important; 
     }
     .mobile-card-modal .draggable img {
         height: auto !important;
-        max-height: 60vh !important;
-        object-fit: contain !important;
+        max-height: none !important;
+        aspect-ratio: 387 / 315 !important;
+        object-fit: cover !important;
+        object-position: top center !important;
     }
 
 
-    /* Facem Lego mai mare in Pop-up */
-    .mobile-card-modal .draggable[data-image*="lego"] {
-        width: 95vw !important;
-        max-width: 380px !important;
-        transform: scale(1.1) !important;
-    }
+    
 
 
     /* Permitem scroll-ul cand apesi pe carduri */
@@ -1688,17 +1687,8 @@ body {
         max-width: 100% !important; /* Autofill cerut de utilizator */
     }
     
-    /* Exceptie: In interiorul pop-up-ului (modal), pozitionarea e rezolvata de flexbox */
-    .mobile-card-modal .draggable,
-    .mobile-card-modal .draggable[data-image] {
-        left: auto !important;
-        right: auto !important;
-        transform: scale(1.1) !important;
-        max-width: 500px !important;
-    }
-    .mobile-card-modal .draggable[data-image*="lego"] {
-        transform: scale(1.15) !important;
-    }
+    
+    
     
     /* UI Capture e prea inalt, il facem mai ingust pe tableta ca sa nu explodeze in inaltime */
     .draggable[data-image*="uicapture"] {
@@ -2114,3 +2104,72 @@ body {
     .site-footer {
         padding-bottom: calc(40px + env(safe-area-inset-bottom)) !important;
     }
+
+    /* --- Elegant Morphing Burger --- */
+    .elegant-burger {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
+    .elegant-burger .burger-line {
+        position: absolute;
+        left: 3px;
+        width: 18px;
+        height: 2px;
+        background-color: #333333;
+        border-radius: 2px;
+        /* Closing: Un-rotate first (0s delay), then separate (0.2s delay) */
+        transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                    top 0.25s cubic-bezier(0.25, 1, 0.5, 1) 0.25s,
+                    background-color 0.3s ease;
+    }
+    .elegant-burger .line-top {
+        top: 7px;
+        transform: rotate(0deg);
+    }
+    .elegant-burger .line-bottom {
+        top: 15px;
+        transform: rotate(0deg);
+    }
+
+    body.menu-open .elegant-burger .burger-line {
+        /* Opening: Merge to center first (0s delay), then rotate into X (0.2s delay) */
+        transition: top 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                    transform 0.25s cubic-bezier(0.25, 1, 0.5, 1) 0.25s;
+    }
+    body.menu-open .elegant-burger .line-top {
+        top: 11px;
+        transform: rotate(135deg);
+    }
+    body.menu-open .elegant-burger .line-bottom {
+        top: 11px;
+        transform: rotate(-135deg);
+    }
+
+    /* SINGLE SOURCE OF TRUTH FOR MODAL CARD WIDTH */
+    .mobile-card-modal .draggable,
+    .mobile-card-modal .draggable[data-image] {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin: 0 !important;
+        width: calc(100vw - 60px) !important;
+        max-width: 450px !important;
+        height: auto !important;
+        z-index: 1 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    
+    /* Make UI Capture and all other cards completely uniform on mobile */
+    .draggable img,
+    .mobile-card-modal .draggable img {
+        aspect-ratio: 387 / 315 !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+    }
+}
+
+    
