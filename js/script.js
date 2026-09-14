@@ -48,7 +48,7 @@
             const footerGroups = document.querySelectorAll('.footer-group-title');
             footerGroups.forEach(function(title) {
                 title.addEventListener('click', function() {
-                    if (window.innerWidth <= 1024) {
+                    if (window.innerWidth <= 768) {
                         const parent = this.parentElement;
                         const wasActive = parent.classList.contains('active');
                         
@@ -169,7 +169,7 @@
             document.addEventListener('touchend', dragEnd);
 
             function dragStart(e) {
-                if (window.innerWidth <= 1024) return;
+                if (window.innerWidth <= 768) return;
                 if (e.target.closest('.draggable')) {
                     if (e.type === "touchstart") {
                         initialX = e.touches[0].clientX;
@@ -236,7 +236,7 @@
             // Ignore if clicked on something draggable to not interfere
             if (e.target.closest('.draggable')) return;
             
-            if (window.innerWidth <= 1024) return;
+            if (window.innerWidth <= 768) return;
             const numParticles = 4;
             for (let i = 0; i < numParticles; i++) {
                 const particle = document.createElement('div');
@@ -321,7 +321,7 @@
     const draggables = document.querySelectorAll('.draggable');
     draggables.forEach(card => {
         card.addEventListener('click', function(e) {
-            if (window.innerWidth <= 1024) {
+            if (window.innerWidth <= 768) {
                 // Don't trigger if they clicked a link inside (if any)
                 if (e.target.tagName.toLowerCase() === 'a') return;
                 
@@ -375,7 +375,7 @@ function initAudio() {
 
 // 1. BUTTON - clean Apple-like tock
 function playButtonSound() {
-    if (window.innerWidth <= 1024) return;
+    if (window.innerWidth <= 768) return;
     initAudio();
     var t = audioCtx.currentTime;
     var osc = audioCtx.createOscillator();
@@ -394,7 +394,7 @@ function playButtonSound() {
 
 // 2. BACKGROUND - soft tick (audible)
 function playBackgroundSound() {
-    if (window.innerWidth <= 1024) return;
+    if (window.innerWidth <= 768) return;
     initAudio();
     var t = audioCtx.currentTime;
     var osc = audioCtx.createOscillator();
@@ -413,7 +413,7 @@ function playBackgroundSound() {
 
 // 3. POPUP - gentle soft pop
 function playPopupSound() {
-    if (window.innerWidth <= 1024) return;
+    if (window.innerWidth <= 768) return;
     initAudio();
     var t = audioCtx.currentTime;
     var osc = audioCtx.createOscillator();
@@ -485,7 +485,7 @@ if (cvToggle && cvDropdown) {
     const wrappers = document.querySelectorAll('.sticky-card-wrapper');
     
     function update3DStacking() {
-        const isMobile = window.innerWidth <= 1024;
+        const isMobile = window.innerWidth <= 768;
         
         if (!isMobile) {
             // Reset transforms on desktop
