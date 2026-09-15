@@ -61,7 +61,7 @@ body.loading {
     text-align: left;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .preloader-content {
     width: 100%;
     max-width: 100%;
@@ -121,11 +121,11 @@ body {
         }
 
         .container {
-            padding: 0 300px;
-            max-width: 1920px;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
+    padding: 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
         /* --- NAVBAR --- */
                         .mobile-menu-btn {
@@ -941,7 +941,7 @@ body {
 /* --- Overlay Visibility --- */
 .mobile-only-overlay { display: none !important; }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     .project-detail-card {
         height: 540px !important; /* Fixed */
@@ -1669,7 +1669,7 @@ body {
 
 
 /* --- Tablet & Mobile Logo 100% --- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .logo, .footer-left {
         color: #333333 !important;
         background: none !important;
@@ -1684,7 +1684,7 @@ body {
 
 
 /* --- Tablet Optimizations (769px - 850px) --- */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 1024px) {
     /* Limitam cardurile de portofoliu la o latime potrivita, centrate */
     .project-detail-card {
         max-width: 100% !important; /* Autofill cerut de utilizator */
@@ -1716,7 +1716,7 @@ body {
 
 
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 1024px) {
     /* Spatiere adaptata pentru tableta deoarece cardurile sunt mult mai inalte (480px width) */
 
 }
@@ -1868,7 +1868,7 @@ body {
 
 
 /* --- TACTILE FEEDBACK (MOBILE ONLY) --- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .drag-project-card picture, 
     .drag-project-card > img {
         transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1907,7 +1907,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* --- FINAL MOBILE CARD FIXES --- */
     .project-detail-card {
         height: 650px !important; /* Safe height for all cards */
@@ -2111,7 +2111,7 @@ body {
 
     
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .preloader-brand {
         font-size: 14px;
         letter-spacing: 0;
@@ -2122,7 +2122,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* Disable nav-item hover background/border on touch devices */
     .nav-item:hover {
         background-color: transparent !important;
@@ -2166,7 +2166,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* Footer Accordion Mobile */
     .footer-right {
         flex-direction: column !important;
@@ -2229,14 +2229,14 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .site-footer {
         padding-bottom: calc(20px + env(safe-area-inset-bottom)) !important;
     }
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .faq-item {
         padding: 0 16px !important; /* Less padding to give text more room */
     }
@@ -2289,98 +2289,15 @@ body {
     color: #000000 !important;
 }
 
+
+
 /* ============================================
-   PROPORTIONAL LAPTOP LAYOUT (769px - 1919px)
+   SCALED LAPTOPS (1025px - 1399px)
    ============================================ */
-@media (min-width: 769px) and (max-width: 1919px) {
-    /* 1. Proportional side margins */
-    .container {
-        padding-left: 8vw !important;
-        padding-right: 8vw !important;
-        max-width: 100% !important;
-    }
-    
-    /* 2. Fluid Navbar to prevent overlaps */
-    .navbar {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        position: relative !important;
-    }
-    /* Disable absolute positioning on nav-links so it CANNOT overlap */
-    .nav-links {
-        position: static !important;
-        transform: none !important;
-        display: flex !important;
-        gap: 1.5vw !important;
-        flex: 1 !important;
-        justify-content: center !important;
-    }
-    .nav-item {
-        font-size: clamp(12px, 1.1vw, 16px) !important;
-        white-space: nowrap !important;
-    }
-    .lang-dropdown .btn, .nav-actions .btn {
-        font-size: clamp(12px, 1vw, 16px) !important;
-        padding: 8px 1vw !important;
-        white-space: nowrap !important;
-    }
-    .logo {
-        font-size: clamp(16px, 1.5vw, 24px) !important;
-    }
-
-    /* 3. Fluid Draggable Area (The masonry cards) */
-    .draggable-area {
-        /* Scale down the entire 1320px block to fit the available width (100vw - 16vw padding) */
-        transform: scale(calc((100vw - 16vw) / 1320)) !important;
-        transform-origin: top center !important;
-        /* Remove the blank space left by transform scaling */
-        margin-bottom: calc(((100vw - 16vw) / 1320) * 976px - 976px) !important;
-    }
-
-    /* 4. EXACT Scaled Project Detail Cards (Despre Proiecte) */
-    .sticky-card-wrapper {
-        width: 1320px !important; /* Force 1920px layout width */
-        transform: scale(calc((100vw - 16vw) / 1320)) !important; /* Shrink to fit screen */
-        transform-origin: top left !important;
-        /* The title is ~74px, card is 514px. Total height ~588px. 
-           We calculate the negative margin to remove the empty space left by scaling */
-        margin-bottom: calc(60vh - (588px - (588px * ((100vw - 16vw) / 1320)))) !important;
-    }
-    .project-detail-card {
-        width: 1320px !important;
-        height: 514px !important; /* Exact PC height */
-        display: flex !important;
-        flex-direction: row !important;
-    }
-    .pd-info {
-        padding: 26px 20px 26px 40px !important; /* Exact PC padding */
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .pd-title {
-        font-size: 24px !important; /* Exact PC font */
-    }
-    .pd-body {
-        font-size: 16px !important; /* Exact PC font */
-    }
-    .pd-image {
-        width: auto !important;
-    }
-    
-    /* 5. Fluid Hero Text */
-    .hero-text {
-        font-size: clamp(20px, 2.5vw, 38px) !important;
-    }
-    
-    /* 6. Section Titles */
-    .section-title {
-        font-size: clamp(20px, 2vw, 32px) !important;
-    }
-    
-    /* 7. Footer */
-    .footer-content {
-        max-width: 100% !important;
-        padding: 0 !important;
+@media (min-width: 1025px) and (max-width: 1399px) {
+    /* Set the viewport rendering scale so any laptop smaller than 1400px 
+       automatically scales down the flawless 1400px layout exactly */
+    html {
+        zoom: calc(100vw / 1400);
     }
 }
