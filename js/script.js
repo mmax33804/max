@@ -3,7 +3,7 @@
             
 
             // Mobile Menu Toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuBtn = document.querySelector('.navbar__mobile-btn');
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -45,7 +45,7 @@
             }
             
             // Footer Accordion Logic (Mobile)
-            const footerGroups = document.querySelectorAll('.footer-group-title');
+            const footerGroups = document.querySelectorAll('.footer__title');
             footerGroups.forEach(function(title) {
                 title.addEventListener('click', function() {
                     if (window.innerWidth <= 1024) {
@@ -53,7 +53,7 @@
                         const wasActive = parent.classList.contains('active');
                         
                         // Close all footer groups first
-                        document.querySelectorAll('.footer-group').forEach(group => {
+                        document.querySelectorAll('.footer__group').forEach(group => {
                             group.classList.remove('active');
                         });
                         
@@ -66,10 +66,10 @@
             });
 
             // Language Dropdown Logic
-            const langDropdown = document.querySelector('.lang-dropdown');
+            const langDropdown = document.querySelector('.navbar__lang-dropdown');
             const langToggle = document.getElementById('langToggle');
             const currentLangText = document.getElementById('currentLangText');
-            const langOptions = document.querySelectorAll('.lang-option');
+            const langOptions = document.querySelectorAll('.navbar__lang-option');
             
             if (langToggle && langDropdown) {
                 langToggle.addEventListener('click', function(e) {
@@ -121,9 +121,9 @@
             });
 
             // FAQ Accordion logic
-            const faqItems = document.querySelectorAll('.faq-item');
+            const faqItems = document.querySelectorAll('.faq__item');
             faqItems.forEach(item => {
-                const header = item.querySelector('.faq-header');
+                const header = item.querySelector('.faq__header');
                 header.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
                     
@@ -136,7 +136,7 @@
                     // Open clicked
                     if (!isActive) {
                         item.classList.add('active');
-                        const answer = item.querySelector('.faq-answer');
+                        const answer = item.querySelector('.faq__answer');
                         const totalHeight = 80 + answer.scrollHeight;
                         item.style.height = totalHeight + 'px';
                     }
@@ -147,7 +147,7 @@
             if (faqItems.length > 0) {
                 // Use setTimeout to ensure DOM is fully rendered before calculating scrollHeight
                 setTimeout(() => {
-                    faqItems[0].querySelector('.faq-header').click();
+                    faqItems[0].querySelector('.faq__header').click();
                 }, 100);
             }
 
@@ -435,7 +435,7 @@ document.addEventListener('mousedown', function(e) {
     var tag = e.target.tagName ? e.target.tagName.toLowerCase() : '';
     var isBtn = (tag === 'a' || tag === 'button' || tag === 'span');
     if (!isBtn) {
-        try { isBtn = !!e.target.closest('button, .btn, a, .nav-item, .lang-option, .faq-header, .review-link, .pd-link, .cv-download-option, .mobile-menu-btn, .draggable'); } catch(err) {}
+        try { isBtn = !!e.target.closest('button, .btn, a, .navbar__item, .navbar__lang-option, .faq__header, .review__link, .project-card__link, .navbar__cv-download-option, .navbar__mobile-btn, .draggable'); } catch(err) {}
     }
     if (isBtn) {
         playButtonSound();
@@ -447,7 +447,7 @@ document.addEventListener('touchstart', function(e) {
     var tag = e.target.tagName ? e.target.tagName.toLowerCase() : '';
     var isBtn = (tag === 'a' || tag === 'button' || tag === 'span');
     if (!isBtn) {
-        try { isBtn = !!e.target.closest('button, .btn, a, .nav-item, .lang-option, .faq-header, .review-link, .pd-link, .cv-download-option, .mobile-menu-btn, .draggable'); } catch(err) {}
+        try { isBtn = !!e.target.closest('button, .btn, a, .navbar__item, .navbar__lang-option, .faq__header, .review__link, .project-card__link, .navbar__cv-download-option, .navbar__mobile-btn, .draggable'); } catch(err) {}
     }
     if (isBtn) {
         playButtonSound();
@@ -457,14 +457,14 @@ document.addEventListener('touchstart', function(e) {
 }, {passive: true, capture: true});
 
 // CV Download Dropdown Logic
-var cvDropdown = document.querySelector('.cv-dropdown');
+var cvDropdown = document.querySelector('.navbar__cv-dropdown');
 var cvToggle = document.getElementById('cvToggle');
 
 if (cvToggle && cvDropdown) {
     cvToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        var langD = document.querySelector('.lang-dropdown');
+        var langD = document.querySelector('.navbar__lang-dropdown');
         if (langD) langD.classList.remove('open');
         cvDropdown.classList.toggle('open');
         if (cvDropdown.classList.contains('open')) playPopupSound();
@@ -482,7 +482,7 @@ if (cvToggle && cvDropdown) {
 
 /* --- iOS 3D STICKY STACK (MOBILE ONLY) --- */
     // 2. 3D Sticky Stacking (iOS Style)
-    const wrappers = document.querySelectorAll('.sticky-card-wrapper');
+    const wrappers = document.querySelectorAll('.project-stack__wrapper');
     
     function update3DStacking() {
         const isMobile = window.innerWidth <= 1024;
@@ -490,7 +490,7 @@ if (cvToggle && cvDropdown) {
         if (!isMobile) {
             // Reset transforms on desktop
             wrappers.forEach(w => {
-                const card = w.querySelector('.project-detail-card');
+                const card = w.querySelector('.project-card');
                 if (card) {
                     card.style.transform = '';
                     card.style.filter = '';
@@ -503,7 +503,7 @@ if (cvToggle && cvDropdown) {
         for (let i = 0; i < wrappers.length - 1; i++) {
             const currentWrapper = wrappers[i];
             const nextWrapper = wrappers[i + 1];
-            const currentCard = currentWrapper.querySelector('.project-detail-card');
+            const currentCard = currentWrapper.querySelector('.project-card');
             
             if (!currentCard) continue;
 
@@ -536,8 +536,8 @@ if (cvToggle && cvDropdown) {
 
 // Global Dropdown Mutually Exclusive Logic
 document.addEventListener('click', function(e) {
-    const langD = document.querySelector('.lang-dropdown');
-    const cvD = document.querySelector('.cv-dropdown');
+    const langD = document.querySelector('.navbar__lang-dropdown');
+    const cvD = document.querySelector('.navbar__cv-dropdown');
     
     // If we click on the langToggle, close CV
     const langT = document.getElementById('langToggle');

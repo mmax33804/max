@@ -9,19 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1789578097">
+    <link rel="stylesheet" href="css/style.css?v=1789579906">
 
     
 </head>
 <body class="loading">
     <!-- PRELOADER -->
     <div id="preloader">
-        <div class="preloader-content">
-            <div class="preloader-header">
-                <span class="preloader-brand">
+        <div class="preloader__content">
+            <div class="preloader__header">
+                <span class="preloader__brand">
                     <span id="preloaderText" style="display: inline-block; transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); transform: translateY(0);">Se ini&#539;ializeaz&#259;</span><span id="preloaderDots" style="display:inline-block; width:20px; text-align:left;"></span>
                 </span>
-                <span class="preloader-counter" id="preloaderCounter">0%</span>
+                <span class="preloader__counter" id="preloaderCounter">0%</span>
             </div>
         </div>
     </div>
@@ -127,54 +127,54 @@
     <nav class="navbar container">
         <a href="#" class="logo">Maxim</a>
         
-        <div class="mobile-menu-btn" aria-label="Menu">
-    <div class="elegant-burger">
-        <span class="burger-line line-top"></span>
-        <span class="burger-line line-bottom"></span>
+        <div class="navbar__mobile-btn" aria-label="Menu">
+    <div class="navbar__burger">
+        <span class="navbar__burger-line line-top"></span>
+        <span class="navbar__burger-line line-bottom"></span>
     </div>
 </div>
 
-        <div class="nav-links">
-            <a href="#despre-proiecte" class="nav-item"><span data-i18n="nav_projects">Proiecte <span class="count">(6)</span></span></a>
-            <a href="#faq" class="nav-item" data-i18n="nav_faq">&Icirc;ntreb&#259;ri &#537;i r&#259;spunsuri</a>
-            <a href="#recenzii" class="nav-item"><span data-i18n="nav_reviews">Recenzii <span class="count">(3)</span></span></a>
+        <div class="navbar__links">
+            <a href="#despre-proiecte" class="navbar__item"><span data-i18n="nav_projects">Proiecte <span class="count">(6)</span></span></a>
+            <a href="#faq" class="navbar__item" data-i18n="nav_faq">&Icirc;ntreb&#259;ri &#537;i r&#259;spunsuri</a>
+            <a href="#recenzii" class="navbar__item"><span data-i18n="nav_reviews">Recenzii <span class="count">(3)</span></span></a>
         </div>
 
-        <div class="nav-actions">
-                        <div class="lang-dropdown">
-                <button class="btn lang-btn" id="langToggle">
+        <div class="navbar__actions">
+                        <div class="navbar__lang-dropdown">
+                <button class="btn navbar__lang-btn" id="langToggle">
                     <span id="currentLangText">Rom&acirc;n&#259;</span>
-                    <div class="lang-icon-wrapper">
-                        <svg class="lang-arrow" viewBox="0 0 12 12" width="11.68" height="11.37" fill="none" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="navbar__lang-icon-wrapper">
+                        <svg class="navbar__lang-arrow" viewBox="0 0 12 12" width="11.68" height="11.37" fill="none" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M2.5 4.5L6 8L9.5 4.5" />
                         </svg>
                     </div>
                 </button>
-                                                    <div class="lang-menu" id="langMenu">
-                      <a href="javascript:void(0)" class="lang-option" data-i18n="lang_ro">Rom&acirc;n&#259;</a>
-                      <a href="javascript:void(0)" class="lang-option" data-i18n="lang_ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
-                      <a href="javascript:void(0)" class="lang-option" data-i18n="lang_en">English</a>
+                                                    <div class="navbar__lang-menu" id="langMenu">
+                      <a href="javascript:void(0)" class="navbar__lang-option" data-i18n="lang_ro">Rom&acirc;n&#259;</a>
+                      <a href="javascript:void(0)" class="navbar__lang-option" data-i18n="lang_ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
+                      <a href="javascript:void(0)" class="navbar__lang-option" data-i18n="lang_en">English</a>
                   </div>
             </div>
-            <div class="cv-dropdown">
+            <div class="navbar__cv-dropdown">
                 <button class="btn" data-i18n="nav_download_cv" id="cvToggle">Descarcă CV</button>
-                <div class="cv-dropdown-menu" id="cvMenu">
-                    <a href="assets/cv-test.pdf" target="_blank" class="cv-download-option">
-                        <div class="cv-option-left">
-                            <div class="cv-option-icon">PDF</div>
-                            <div class="cv-option-info">
-                                <span class="cv-option-lang">Română</span>
-                                <span class="cv-option-size">1.2 MB</span>
+                <div class="navbar__cv-dropdown-menu" id="cvMenu">
+                    <a href="assets/cv-test.pdf" target="_blank" class="navbar__cv-download-option">
+                        <div class="navbar__cv-option-left">
+                            <div class="navbar__cv-option-icon">PDF</div>
+                            <div class="navbar__cv-option-info">
+                                <span class="navbar__cv-option-lang">Română</span>
+                                <span class="navbar__cv-option-size">1.2 MB</span>
                             </div>
                         </div>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     </a>
-                    <a href="assets/cv-test.pdf" target="_blank" class="cv-download-option">
-                        <div class="cv-option-left">
-                            <div class="cv-option-icon">PDF</div>
-                            <div class="cv-option-info">
-                                <span class="cv-option-lang">Русский</span>
-                                <span class="cv-option-size">1.1 MB</span>
+                    <a href="assets/cv-test.pdf" target="_blank" class="navbar__cv-download-option">
+                        <div class="navbar__cv-option-left">
+                            <div class="navbar__cv-option-icon">PDF</div>
+                            <div class="navbar__cv-option-info">
+                                <span class="navbar__cv-option-lang">Русский</span>
+                                <span class="navbar__cv-option-size">1.1 MB</span>
                             </div>
                         </div>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -186,15 +186,15 @@
         </div>
             </nav>
 
-    <section class="hero-block container">
-        <div class="hero-content fade-up">
-            <div class="stickers">
-                <img src="assets/figma.png?v=1789248535" alt="Figma" class="sticker sticker-figma">
-                <img src="assets/tilda.png?v=1789248731" alt="Tilda" class="sticker sticker-tilda">
-                <img src="assets/uxui.png?v=1789248535" alt="UX/UI" class="sticker sticker-uxui">
+    <section class="hero container">
+        <div class="hero__content fade-up">
+            <div class="hero__stickers">
+                <img src="assets/figma.png?v=1789248535" alt="Figma" class="hero__sticker hero__sticker-figma">
+                <img src="assets/tilda.png?v=1789248731" alt="Tilda" class="hero__sticker hero__sticker-tilda">
+                <img src="assets/uxui.png?v=1789248535" alt="UX/UI" class="hero__sticker hero__sticker-uxui">
             </div>
             
-            <p class="hero-text">
+            <p class="hero__text">
                 <span data-i18n="hero_text_1">Salut! Mă numesc</span> <span class="text-grey"><span data-i18n="brand_name">Maxim</span><br class="mobile-br">
                 <span data-i18n="hero_text_2">și sunt designer UX/UI.</span></span><br class="desktop-br">
                 <span data-i18n="hero_text_3">Specialitatea mea este</span><br class="mobile-br">
@@ -209,59 +209,59 @@
 
     <!-- Sectiunea Previzualizare Proiecte (Draggable) -->
         <!-- Sectiunea Previzualizare Proiecte (Draggable) -->
-    <section id="proiecte" class="preview-section">
+    <section id="proiecte" class="preview">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 50px;"><span data-i18n="moments_title">Momente din proiecte</span></h2>
         </div>
-                        <div class="draggable-area" style="width: 100%; height: 976px; position: relative; overflow: hidden;">
+                        <div class="preview__drag-area" style="width: 100%; height: 976px; position: relative; overflow: hidden;">
             <!-- Conde Nast (Z: 1) -->
-            <div class="draggable drag-project-card" data-image="assets/conde.png" style="left: calc(50% - 560px); top: 50px; width: 380px; z-index: 1;">
+            <div class="draggable preview__card" data-image="assets/conde.png" style="left: calc(50% - 560px); top: 50px; width: 380px; z-index: 1;">
                 <picture>
                     <source media="(max-width: 1024px)" srcset="assets/Condenast-mobile.png">
                     <img loading="lazy" src="assets/conde.png" alt="Conde Nast">
                 </picture>
-                <div class="drag-project-title">Conde Nast Traveller</div>
-                <span class="drag-tooltip">Drag card</span>
+                <div class="preview__title">Conde Nast Traveller</div>
+                <span class="preview__tooltip">Drag card</span>
             </div>
             
             <!-- UI Capture (Z: 1) -->
-            <div class="draggable drag-project-card" data-image="assets/uicapture.png" style="left: calc(50% + 240px); top: 120px; width: 320px; z-index: 1;">
+            <div class="draggable preview__card" data-image="assets/uicapture.png" style="left: calc(50% + 240px); top: 120px; width: 320px; z-index: 1;">
                 <picture>
                     <source media="(max-width: 1024px)" srcset="assets/uicapture-mobile.png">
                     <img loading="lazy" src="assets/uicapture.png" alt="UI Capture">
                 </picture>
-                <div class="drag-project-title">UI Capture</div>
-                <span class="drag-tooltip">Drag card</span>
+                <div class="preview__title">UI Capture</div>
+                <span class="preview__tooltip">Drag card</span>
             </div>
             
             <!-- Lego (Z: 2) -->
-            <div class="draggable drag-project-card" data-image="assets/lego.png" style="left: calc(50% - 380px); top: 220px; width: 680px; z-index: 2;">
+            <div class="draggable preview__card" data-image="assets/lego.png" style="left: calc(50% - 380px); top: 220px; width: 680px; z-index: 2;">
                 <picture>
                     <source media="(max-width: 1024px)" srcset="assets/lego-mobile.png">
                     <img loading="lazy" src="assets/lego.png" alt="Lego">
                 </picture>
-                <div class="drag-project-title">Lego</div>
-                <span class="drag-tooltip">Drag card</span>
+                <div class="preview__title">Lego</div>
+                <span class="preview__tooltip">Drag card</span>
             </div>
 
             <!-- Tropicana (Z: 3) -->
-            <div class="draggable drag-project-card" data-image="assets/tropicana.png" style="left: calc(50% - 520px); top: 480px; width: 350px; z-index: 3;">
+            <div class="draggable preview__card" data-image="assets/tropicana.png" style="left: calc(50% - 520px); top: 480px; width: 350px; z-index: 3;">
                 <picture>
                     <source media="(max-width: 1024px)" srcset="assets/tropicana-mobile.png">
                     <img loading="lazy" src="assets/tropicana.png" alt="Tropicana">
                 </picture>
-                <div class="drag-project-title">Tropicana</div>
-                <span class="drag-tooltip">Drag card</span>
+                <div class="preview__title">Tropicana</div>
+                <span class="preview__tooltip">Drag card</span>
             </div>
 
             <!-- Acer (Z: 3) -->
-            <div class="draggable drag-project-card" data-image="assets/acer.png" style="left: calc(50% + 140px); top: 520px; width: 360px; z-index: 3;">
+            <div class="draggable preview__card" data-image="assets/acer.png" style="left: calc(50% + 140px); top: 520px; width: 360px; z-index: 3;">
                 <picture>
                     <source media="(max-width: 1024px)" srcset="assets/Acer-mobile.png">
                     <img loading="lazy" src="assets/acer.png" alt="Acer">
                 </picture>
-                <div class="drag-project-title">Acer</div>
-                <span class="drag-tooltip">Drag card</span>
+                <div class="preview__title">Acer</div>
+                <span class="preview__tooltip">Drag card</span>
             </div>
 
         </div>
@@ -270,11 +270,11 @@
         <!-- Sectiunea <span data-i18n="about_projects_title">Despre Proiecte</span> -->
         <!-- Sectiunea <span data-i18n="about_projects_title">Despre Proiecte</span> -->
         <section id="despre-proiecte" class="container" style="margin-top: 150px; margin-bottom: 0;">
-        <div class="cards-stack-container">
-            <div class="sticky-card-wrapper" style="top: 130px; z-index: 1;">
+        <div class="project-stack">
+            <div class="project-stack__wrapper" style="top: 130px; z-index: 1;">
                 <h2 class="section-title" style="text-align: center; margin-bottom: 50px;"><span data-i18n="about_projects_title">Despre Proiecte</span></h2>
-                <div class="project-detail-card">
-                    <div class="pd-image">
+                <div class="project-card">
+                    <div class="project-card__image">
                         <img loading="lazy" src="assets/conde.png" alt="Conde Nast Traveler">
                     
                         
@@ -283,24 +283,24 @@
                         
                         
                     </div>
-                    <div class="pd-info">
-                        <div class="pd-header">
-                            <div class="pd-title" data-i18n="pd1_title">Redesign Conde nast traveller</div>
+                    <div class="project-card__info">
+                        <div class="project-card__header">
+                            <div class="project-card__title" data-i18n="pd1_title">Redesign Conde nast traveller</div>
                         </div>
-                        <div class="pd-body" data-i18n="pd1_body">
+                        <div class="project-card__body" data-i18n="pd1_body">
                             Condé Nast Traveler este o revistă internațională de top dedicată călătoriilor de lux și destinațiilor unice.<br>
                             Problema era că designul devenise învechit; l-am modernizat și am adăugat funcționalități și, pe lângă, am schimbat și structura într-una mai bună.
                         </div>
-                        <div class="pd-footer">
-                            <a href="https://www.behance.net/gallery/215594433/CONDE-NAST-TRAVELLER-(-UXUI-)" class="pd-link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
-                            <div class="pd-likes" data-i18n="pd1_likes">385 aprecieri</div>
+                        <div class="project-card__footer">
+                            <a href="https://www.behance.net/gallery/215594433/CONDE-NAST-TRAVELLER-(-UXUI-)" class="project-card__link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
+                            <div class="project-card__likes" data-i18n="pd1_likes">385 aprecieri</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sticky-card-wrapper" style="top: 220px; z-index: 2;">
-                <div class="project-detail-card">
-                    <div class="pd-image">
+            <div class="project-stack__wrapper" style="top: 220px; z-index: 2;">
+                <div class="project-card">
+                    <div class="project-card__image">
                         <img loading="lazy" src="assets/lego2.png" alt="Lego UX/UI">
                     
                         
@@ -309,23 +309,23 @@
                         
                         
                     </div>
-                    <div class="pd-info">
-                        <div class="pd-header">
-                            <div class="pd-title" data-i18n="pd2_title">Redesign Lego UX/UI</div>
+                    <div class="project-card__info">
+                        <div class="project-card__header">
+                            <div class="project-card__title" data-i18n="pd2_title">Redesign Lego UX/UI</div>
                         </div>
-                        <div class="pd-body" data-i18n="pd2_body">
+                        <div class="project-card__body" data-i18n="pd2_body">
                             Compania Lego este o companie care face jucării pentru copii. Problema, la fel, era că designul a rămas în anii 2014-2016, așa că pentru rezolvarea ei am făcut un redesign și l-am adăugat în portofoliu. În redesign am schimbat structura UX făcând-o mai comodă pentru utilizatori și UI-ul bazându-mă pe noile standarde.
                         </div>
-                        <div class="pd-footer">
-                            <a href="https://www.behance.net/gallery/211650341/Redesign-Lego-UXUI" class="pd-link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
-                            <div class="pd-likes" data-i18n="pd2_likes">107 aprecieri</div>
+                        <div class="project-card__footer">
+                            <a href="https://www.behance.net/gallery/211650341/Redesign-Lego-UXUI" class="project-card__link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
+                            <div class="project-card__likes" data-i18n="pd2_likes">107 aprecieri</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sticky-card-wrapper" style="top: 220px; z-index: 3;">
-                <div class="project-detail-card">
-                    <div class="pd-image">
+            <div class="project-stack__wrapper" style="top: 220px; z-index: 3;">
+                <div class="project-card">
+                    <div class="project-card__image">
                         <img loading="lazy" src="assets/acer-card.png" alt="Acer Redesign">
                     
                         
@@ -334,23 +334,23 @@
                         
                         
                     </div>
-                    <div class="pd-info">
-                        <div class="pd-header">
-                            <div class="pd-title" data-i18n="pd3_title">Redesign Acer</div>
+                    <div class="project-card__info">
+                        <div class="project-card__header">
+                            <div class="project-card__title" data-i18n="pd3_title">Redesign Acer</div>
                         </div>
-                        <div class="pd-body" data-i18n="pd3_body">
+                        <div class="project-card__body" data-i18n="pd3_body">
                             Cu toții cred că știm despre compania ACER, care face tehnică de top de mai mulți ani. Problema aici era că site-ul părea mai mult ca un magazin care vinde foarte multe produse ieftine. Eu am decis să schimb UX și UI, astfel făcându-l mai modern, mai premium și oferind mai multă încredere pentru cumpărători.
                         </div>
-                        <div class="pd-footer">
-                            <a href="https://www.behance.net/gallery/204356821/ACER-TEHNOLOGY-(-REDESIGN-)" class="pd-link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
-                            <div class="pd-likes" data-i18n="pd3_likes">109 aprecieri</div>
+                        <div class="project-card__footer">
+                            <a href="https://www.behance.net/gallery/204356821/ACER-TEHNOLOGY-(-REDESIGN-)" class="project-card__link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
+                            <div class="project-card__likes" data-i18n="pd3_likes">109 aprecieri</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sticky-card-wrapper" style="top: 220px; z-index: 4;">
-                <div class="project-detail-card">
-                    <div class="pd-image">
+            <div class="project-stack__wrapper" style="top: 220px; z-index: 4;">
+                <div class="project-card">
+                    <div class="project-card__image">
                         <img loading="lazy" src="assets/ui-capture-card.png" alt="Ui Capture">
                     
                         
@@ -359,16 +359,16 @@
                         
                         
                     </div>
-                    <div class="pd-info">
-                        <div class="pd-header">
-                            <div class="pd-title" data-i18n="pd4_title">Ui Capture</div>
+                    <div class="project-card__info">
+                        <div class="project-card__header">
+                            <div class="project-card__title" data-i18n="pd4_title">Ui Capture</div>
                         </div>
-                        <div class="pd-body" data-i18n="pd4_body">
+                        <div class="project-card__body" data-i18n="pd4_body">
                             UI Capture este o extensie de browser pentru a face screenshot-uri rapide și gratuite. Aici puteți să faceți screenshot pentru un element de pe un site, adică doar meniul, doar cartonașul sau chiar o secțiune întreagă; pe lângă aceasta, mai puteți face screenshot la toată pagina. Extensia a fost creată de mine, atât codul cât și designul, doar că la cod, în mare parte, m-a ajutat inteligența artificială.
                         </div>
-                        <div class="pd-footer">
-                            <a href="https://github.com/mmax33804/Capture-ui" class="pd-link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
-                            <div class="pd-likes" data-i18n="pd4_likes">2 stele</div>
+                        <div class="project-card__footer">
+                            <a href="https://github.com/mmax33804/Capture-ui" class="project-card__link" target="_blank" data-i18n="pd_to_project">Către proiect</a>
+                            <div class="project-card__likes" data-i18n="pd4_likes">2 stele</div>
                         </div>
                     </div>
                 </div>
@@ -380,34 +380,34 @@
     <section id="faq" class="container" style="margin-bottom: 150px; display: flex; flex-direction: column; align-items: center;">
         <h2 class="section-title" style="text-align: center; margin-bottom: 50px;"><span data-i18n="faq_title">Întrebări și răspunsuri</span></h2>
         
-                                        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-header">
-                    <span class="faq-question" data-i18n="faq_q1">Experien&#539;a &icirc;n echip&#259;</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+                                        <div class="faq__list">
+            <div class="faq__item">
+                <div class="faq__header">
+                    <span class="faq__question" data-i18n="faq_q1">Experien&#539;a &icirc;n echip&#259;</span>
+                    <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
-                <div class="faq-answer" data-i18n="faq_a1">Am o experien&#539;&#259; de 1,5 ani lucr&acirc;nd at&acirc;t &icirc;n echipe din Republica Moldova, c&acirc;t &#537;i la nivel interna&#539;ional. Am activat ca Web Designer la Sykors.md, ocup&acirc;ndu-m&#259; de web design &#537;i grafic&#259; pentru social media. Ulterior, am colaborat ca UX/UI Designer freelancer cu echipe din Rusia, dezvolt&acirc;nd proiecte de la zero, pe care le pute&#539;i vedea &icirc;n sec&#539;iunea de Recenzii.</div>
+                <div class="faq__answer" data-i18n="faq_a1">Am o experien&#539;&#259; de 1,5 ani lucr&acirc;nd at&acirc;t &icirc;n echipe din Republica Moldova, c&acirc;t &#537;i la nivel interna&#539;ional. Am activat ca Web Designer la Sykors.md, ocup&acirc;ndu-m&#259; de web design &#537;i grafic&#259; pentru social media. Ulterior, am colaborat ca UX/UI Designer freelancer cu echipe din Rusia, dezvolt&acirc;nd proiecte de la zero, pe care le pute&#539;i vedea &icirc;n sec&#539;iunea de Recenzii.</div>
             </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <span class="faq-question" data-i18n="faq_q2">Softurile pe care le folosesc &#537;i ce &#537;tiu s&#259; fac &icirc;n ele</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+            <div class="faq__item">
+                <div class="faq__header">
+                    <span class="faq__question" data-i18n="faq_q2">Softurile pe care le folosesc &#537;i ce &#537;tiu s&#259; fac &icirc;n ele</span>
+                    <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
-                <div class="faq-answer" data-i18n="faq_a2">Principalul meu instrument este Figma (design vizual, analiz&#259; UX, componente, prototipare/anima&#539;ii &#537;i dev handoff). Folosesc &#537;i Photoshop pentru mockup-uri, Visual Studio Code pentru integrare (HTML/CSS), precum &#537;i platforma Tilda pentru web development.</div>
+                <div class="faq__answer" data-i18n="faq_a2">Principalul meu instrument este Figma (design vizual, analiz&#259; UX, componente, prototipare/anima&#539;ii &#537;i dev handoff). Folosesc &#537;i Photoshop pentru mockup-uri, Visual Studio Code pentru integrare (HTML/CSS), precum &#537;i platforma Tilda pentru web development.</div>
             </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <span class="faq-question" data-i18n="faq_q3">Cel mai de succes proiect din portofoliu &#537;i de ce?</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+            <div class="faq__item">
+                <div class="faq__header">
+                    <span class="faq__question" data-i18n="faq_q3">Cel mai de succes proiect din portofoliu &#537;i de ce?</span>
+                    <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
-                <div class="faq-answer" data-i18n="faq_a3">Cel mai de succes proiect este &bdquo;Conde Nast Traveller&rdquo;. Acolo m-am concentrat profund pe arhitectura UX, cre&acirc;nd o experien&#539;&#259; a utilizatorului fluid&#259; &#537;i intuitiv&#259;. Efortul a fost validat de comunitate, proiectul adun&acirc;nd peste 300 de aprecieri.</div>
+                <div class="faq__answer" data-i18n="faq_a3">Cel mai de succes proiect este &bdquo;Conde Nast Traveller&rdquo;. Acolo m-am concentrat profund pe arhitectura UX, cre&acirc;nd o experien&#539;&#259; a utilizatorului fluid&#259; &#537;i intuitiv&#259;. Efortul a fost validat de comunitate, proiectul adun&acirc;nd peste 300 de aprecieri.</div>
             </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <span class="faq-question" data-i18n="faq_q4">Unde am studiat?</span>
-                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
+            <div class="faq__item">
+                <div class="faq__header">
+                    <span class="faq__question" data-i18n="faq_q4">Unde am studiat?</span>
+                    <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>
                 </div>
-                <div class="faq-answer" data-i18n="faq_a4">Am absolvit &#537;coala online Uprock din Moscova, unde am dob&acirc;ndit baze avansate de UI &#537;i UX. &Icirc;n prezent, &icirc;mi continui preg&#259;tirea academic&#259; la ULIM, &icirc;n cadrul facult&#259;&#539;ii de Tehnologii Informa&#539;ionale.</div>
+                <div class="faq__answer" data-i18n="faq_a4">Am absolvit &#537;coala online Uprock din Moscova, unde am dob&acirc;ndit baze avansate de UI &#537;i UX. &Icirc;n prezent, &icirc;mi continui preg&#259;tirea academic&#259; la ULIM, &icirc;n cadrul facult&#259;&#539;ii de Tehnologii Informa&#539;ionale.</div>
             </div>
         </div>
     </section>
@@ -416,63 +416,63 @@
     <section id="recenzii" class="container" style="margin-bottom: 150px; display: flex; flex-direction: column; align-items: center;">
         <h2 class="section-title" style="text-align: center; margin-bottom: 50px;"><span data-i18n="reviews_title">Recenzii (3)</span></h2>
         
-        <div class="reviews-list">
+        <div class="reviews__list">
             <!-- Recenzia 1 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-title">TROPICANA COFFEE</span>
+            <div class="review">
+                <div class="review__header">
+                    <span class="review__title">TROPICANA COFFEE</span>
                     <span class="review-date">26 Iulie</span>
                 </div>
-                <div class="review-body" data-i18n="rev1_body">Maxim a r&#259;spuns solicit&#259;rii noastre cu promptitudine &#537;i profesionalism. A gestionat cu succes o sarcin&#259; atipic&#259; &icirc;ntr-o ni&#537;&#259; specific&#259;: dezvoltarea integral&#259; a unui joc tematic pentru cafeneaua noastr&#259;.</div>
-                <div class="review-footer">
+                <div class="review__body" data-i18n="rev1_body">Maxim a r&#259;spuns solicit&#259;rii noastre cu promptitudine &#537;i profesionalism. A gestionat cu succes o sarcin&#259; atipic&#259; &icirc;ntr-o ni&#537;&#259; specific&#259;: dezvoltarea integral&#259; a unui joc tematic pentru cafeneaua noastr&#259;.</div>
+                <div class="review__footer">
                     <div class="review-user">
-                        <div class="review-avatar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg></div>
-                        <div class="review-user-info">
-                            <span class="review-name">Tropicana Coffee</span>
-                            <span class="review-project" data-i18n="review_freelance">Proiect Freelance</span>
+                        <div class="review__avatar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg></div>
+                        <div class="review__user-info">
+                            <span class="review__name">Tropicana Coffee</span>
+                            <span class="review__project" data-i18n="review_freelance">Proiect Freelance</span>
                         </div>
                     </div>
-                    <a href="https://tropicanavsk.ru/game-tropicana" target="_blank" class="review-link"><span data-i18n="review_view_project">Vezi proiectul</span></a>
+                    <a href="https://tropicanavsk.ru/game-tropicana" target="_blank" class="review__link"><span data-i18n="review_view_project">Vezi proiectul</span></a>
                 </div>
             </div>
 
             <!-- Recenzia 2 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-title">GLUKE ART</span>
+            <div class="review">
+                <div class="review__header">
+                    <span class="review__title">GLUKE ART</span>
                     <span class="review-date">26 Iunie</span>
                 </div>
-                <div class="review-body" data-i18n="rev2_body">Un proiect independent &icirc;n care am gestionat complet ciclul de dezvoltare: de la ilustra&#539;ie &#537;i design vizual, p&acirc;n&#259; la implementarea platformei &icirc;n Tilda. Provocarea principal&#259; a fost termenul strict de dou&#259; s&#259;pt&#259;m&acirc;ni, finalizat cu un produs livrat la timp, unde fiecare pixel reflect&#259; viziunea mea personal&#259;.</div>
-                <div class="review-footer">
+                <div class="review__body" data-i18n="rev2_body">Un proiect independent &icirc;n care am gestionat complet ciclul de dezvoltare: de la ilustra&#539;ie &#537;i design vizual, p&acirc;n&#259; la implementarea platformei &icirc;n Tilda. Provocarea principal&#259; a fost termenul strict de dou&#259; s&#259;pt&#259;m&acirc;ni, finalizat cu un produs livrat la timp, unde fiecare pixel reflect&#259; viziunea mea personal&#259;.</div>
+                <div class="review__footer">
                     <div class="review-user">
-                        <div class="review-avatar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg></div>
-                        <div class="review-user-info">
-                            <span class="review-name">Gluke Art</span>
-                            <span class="review-project" data-i18n="review_freelance">Proiect Freelance</span>
+                        <div class="review__avatar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg></div>
+                        <div class="review__user-info">
+                            <span class="review__name">Gluke Art</span>
+                            <span class="review__project" data-i18n="review_freelance">Proiect Freelance</span>
                         </div>
                     </div>
-                    <a href="https://gluke-art.tilda.ws/" target="_blank" class="review-link"><span data-i18n="review_view_project">Vezi proiectul</span></a>
+                    <a href="https://gluke-art.tilda.ws/" target="_blank" class="review__link"><span data-i18n="review_view_project">Vezi proiectul</span></a>
                 </div>
             </div>
             
             <!-- Recenzia 3 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <span class="review-title" data-i18n="rev3_title">&Icirc;N CUR&Acirc;ND</span>
+            <div class="review">
+                <div class="review__header">
+                    <span class="review__title" data-i18n="rev3_title">&Icirc;N CUR&Acirc;ND</span>
                     <span class="review-date">---</span>
                 </div>
-                <div class="review-body" style="color: #888888; display: flex; align-items: center; justify-content: flex-start;">
+                <div class="review__body" style="color: #888888; display: flex; align-items: center; justify-content: flex-start;">
                     <span data-i18n="rev3_body">Urm&#259;torul proiect este &icirc;n stadiu de dezvoltare. Revin &icirc;n cur&acirc;nd cu detalii, recenzia clientului &#537;i link-ul final...</span>
                 </div>
-                <div class="review-footer">
+                <div class="review__footer">
                     <div class="review-user">
-                        <div class="review-avatar" style="background-color: #E8E8E8;"></div>
-                        <div class="review-user-info">
-                            <span class="review-name" style="color: #888888;" data-i18n="rev3_name">Client confiden&#539;ial</span>
-                            <span class="review-project" data-i18n="review_freelance">Proiect Freelance</span>
+                        <div class="review__avatar" style="background-color: #E8E8E8;"></div>
+                        <div class="review__user-info">
+                            <span class="review__name" style="color: #888888;" data-i18n="rev3_name">Client confiden&#539;ial</span>
+                            <span class="review__project" data-i18n="review_freelance">Proiect Freelance</span>
                         </div>
                     </div>
-                    <a href="#" class="review-link" style="color: #CCCCCC; pointer-events: none;" data-i18n="rev3_link">&Icirc;n cur&acirc;nd</a>
+                    <a href="#" class="review__link" style="color: #CCCCCC; pointer-events: none;" data-i18n="rev3_link">&Icirc;n cur&acirc;nd</a>
                 </div>
             </div>
         </div>
@@ -483,43 +483,43 @@
     
 
     <!-- Footer -->
-        <footer class="site-footer">
+        <footer class="footer">
         <div class="footer-content">
-            <a href="#" class="footer-left">Maxim</a>
-            <div class="footer-right">
-                <div class="footer-group">
-                    <div class="footer-group-title">
+            <a href="#" class="footer__left">Maxim</a>
+            <div class="footer__right">
+                <div class="footer__group">
+                    <div class="footer__title">
                         <span data-i18n="community_networks">Re&#539;ele de comunitate</span>
-                        <svg class="footer-plus-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                        <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                     </div>
-                    <div class="footer-group-content">
+                    <div class="footer__content">
                         <div class="tooltip-container">
-                            <a href="https://www.behance.net/mmax33804" class="footer-link" target="_blank">Behance</a>
+                            <a href="https://www.behance.net/mmax33804" class="footer__link" target="_blank">Behance</a>
                             <span class="tooltip-text">Maxim</span>
                         </div>
                         <div class="tooltip-container">
-                            <a href="https://www.linkedin.com/in/maxim-pintea-2a794421a/?locale=en" class="footer-link" target="_blank">Linkedin</a>
+                            <a href="https://www.linkedin.com/in/maxim-pintea-2a794421a/?locale=en" class="footer__link" target="_blank">Linkedin</a>
                             <span class="tooltip-text">Maxim</span>
                         </div>
                         <div class="tooltip-container">
-                            <a href="https://github.com/mmax33804" class="footer-link" target="_blank">GitHub</a>
+                            <a href="https://github.com/mmax33804" class="footer__link" target="_blank">GitHub</a>
                             <span class="tooltip-text">Maxim</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="footer-group">
-                    <div class="footer-group-title">
+                <div class="footer__group">
+                    <div class="footer__title">
                         <span data-i18n="social_networks">Re&#539;ele sociale</span>
-                        <svg class="footer-plus-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                        <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                     </div>
-                    <div class="footer-group-content">
+                    <div class="footer__content">
                         <div class="tooltip-container">
-                            <a href="https://t.me/Scheptic" class="footer-link" target="_blank">Telegram</a>
+                            <a href="https://t.me/Scheptic" class="footer__link" target="_blank">Telegram</a>
                             <span class="tooltip-text">@Scheptic</span>
                         </div>
                         <div class="tooltip-container">
-                            <a href="https://www.instagram.com/scheptic33804/" class="footer-link" target="_blank">Instagram</a>
+                            <a href="https://www.instagram.com/scheptic33804/" class="footer__link" target="_blank">Instagram</a>
                             <span class="tooltip-text">scheptic33804</span>
                         </div>
                     </div>
@@ -532,7 +532,7 @@
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.36/dist/lenis.min.js"></script>
     
-<script src="js/script.js?v=1789577664"></script>
+<script src="js/script.js?v=1789579906"></script>
 <script src="js/i18n.js"></script>
 
     
