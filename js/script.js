@@ -551,3 +551,8 @@ document.addEventListener('click', function(e) {
         if (langD) langD.classList.remove('open');
     }
 }, true); // Use capture phase to ensure it runs before their own toggles
+
+
+
+
+
