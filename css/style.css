@@ -1,5 +1,22 @@
 
 /* ============================================
+   LAPTOP SCROLL FIX FOR 'DESPRE PROIECTE'
+   ============================================ */
+@media (min-width: 1025px) {
+    /* Disable sticky scrolljacking on laptops so users can scroll normally */
+    .sticky-card-wrapper {
+        position: relative !important;
+        margin-bottom: 60px !important;
+        top: auto !important;
+        z-index: auto !important;
+    }
+    .cards-stack-container {
+        padding-bottom: 20px !important;
+    }
+}
+
+
+/* ============================================
    MOBILE MODAL ANIMATIONS (BEAUTIFUL EDITION)
    ============================================ */
 @keyframes mobileModalFade {
