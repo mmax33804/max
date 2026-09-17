@@ -3,14 +3,13 @@
    LAPTOP STICKY HEIGHT FIX (NO 3D)
    ============================================ */
 @media (min-width: 1025px) and (max-width: 1440px) {
+    /* ONLY fix the height on laptops so it doesn't get cut off at the bottom.
+       We DO NOT touch the top offsets, so the title stays visible at 95px 
+       and cards overlap perfectly at 149px. */
     .project-card {
         height: 460px !important;
         min-height: 460px !important;
     }
-    .project-stack__wrapper:nth-child(1) { top: 60px !important; }
-    .project-stack__wrapper:nth-child(2) { top: 120px !important; }
-    .project-stack__wrapper:nth-child(3) { top: 120px !important; }
-    .project-stack__wrapper:nth-child(4) { top: 120px !important; }
 }
 
 
@@ -242,7 +241,7 @@ body {
             background-color: #ffffff;
         }
 
-        .logo {
+        .navbar__logo {
             font-weight: 700;
             font-size: 18px;
             cursor: pointer;
@@ -255,7 +254,7 @@ body {
             background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: background-position 0.4s ease;
-        }.logo:hover {
+        }.navbar__logo:hover {
             background-position: left;
         }
 
@@ -300,7 +299,9 @@ body {
             background-color: var(--bg-btn);
             border: 1px solid var(--border-btn);
             border-radius: var(--radius);
-            padding: 10px 16px;
+            height: 40px;
+            padding: 0 16px;
+            box-sizing: border-box;
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             font-weight: 500;
@@ -844,10 +845,9 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding: 40px 0;
             border-top: 1px solid #E8E8E8;
-            width: 100%;
+            width: calc(100% - 80px);
             max-width: 1320px;
             margin: 0 auto;
             box-sizing: border-box;
@@ -1244,7 +1244,7 @@ body {
         z-index: 9999 !important;
     }
     
-    .navbar > .logo { order: 1; }
+    .navbar > .navbar__logo { order: 1; }
     .navbar > .navbar__mobile-btn { order: 2; }
     
     body.menu-open .navbar__links {
@@ -2390,4 +2390,20 @@ body {
 }
 .navbar__cv-download-option.is-loading::before {
     width: 100%;
+}
+
+
+/* Hero text selection highlight */
+.hero__text::selection,
+.hero__text *::selection {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+}
+::-moz-selection {
+    background-color: #333333;
+    color: #ffffff;
+}
+::selection {
+    background-color: #333333;
+    color: #ffffff;
 }

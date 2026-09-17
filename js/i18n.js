@@ -7,7 +7,8 @@
         'nav_menu': 'Meniu',
         
         'hero_text_1': 'Salut! M&#259; numesc',
-        'hero_text_2': '&#537;i sunt designer UX/UI.',
+        'hero_text_2': '&#537;i sunt ',
+        'hero_text_2b': 'designer UX/UI.',
         'hero_text_3': 'Specialitatea mea este',
         'hero_text_4': 'transformarea sarcinilor',
         'hero_text_5': 'complexe &#537;i complicate',
@@ -46,7 +47,8 @@
         'nav_menu': '&#1052;&#1077;&#1085;&#1102;',
         
         'hero_text_1': '&#1055;&#1088;&#1080;&#1074;&#1077;&#1090;! &#1052;&#1077;&#1085;&#1103; &#1079;&#1086;&#1074;&#1091;&#1090;',
-        'hero_text_2': '&#1080; &#1103; UX/UI &#1076;&#1080;&#1079;&#1072;&#1081;&#1085;&#1077;&#1088;.',
+        'hero_text_2': '&#1080; &#1103; ',
+        'hero_text_2b': 'UX/UI &#1076;&#1080;&#1079;&#1072;&#1081;&#1085;&#1077;&#1088;.',
         'hero_text_3': '&#1052;&#1086;&#1103; &#1089;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103; &mdash; &#1101;&#1090;&#1086;',
         'hero_text_4': '&#1087;&#1088;&#1077;&#1074;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1077; &#1089;&#1083;&#1086;&#1078;&#1085;&#1099;&#1093;',
         'hero_text_5': '&#1080; &#1079;&#1072;&#1087;&#1091;&#1090;&#1072;&#1085;&#1085;&#1099;&#1093; &#1079;&#1072;&#1076;&#1072;&#1095;',
@@ -84,7 +86,8 @@
         'nav_menu': 'Menu',
         
         'hero_text_1': 'Hi! My name is',
-        'hero_text_2': 'and I am a UX/UI designer.',
+        'hero_text_2': 'and I am a ',
+        'hero_text_2b': 'UX/UI designer.',
         'hero_text_3': 'My specialty is',
         'hero_text_4': 'transforming complex',
         'hero_text_5': 'and complicated tasks',
