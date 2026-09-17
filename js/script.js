@@ -556,3 +556,26 @@ document.addEventListener('click', function(e) {
 
 
 
+
+
+// CV Download Progress Animation
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('.navbar__cv-download-option');
+    if (link) {
+        e.preventDefault();
+        
+        // Start animation
+        link.classList.add('is-loading');
+        
+        // Wait for animation to finish (1.2s)
+        setTimeout(() => {
+            // Open the PDF
+            window.open(link.href, link.target || '_blank');
+            
+            // Reset state and close menu
+            link.classList.remove('is-loading');
+            const cvMenu = document.getElementById('cvMenu');
+            if(cvMenu) cvMenu.classList.remove('open');
+        }, 1200);
+    }
+});

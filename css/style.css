@@ -1,4 +1,19 @@
 
+/* ============================================
+   LAPTOP STICKY HEIGHT FIX (NO 3D)
+   ============================================ */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .project-card {
+        height: 460px !important;
+        min-height: 460px !important;
+    }
+    .project-stack__wrapper:nth-child(1) { top: 60px !important; }
+    .project-stack__wrapper:nth-child(2) { top: 120px !important; }
+    .project-stack__wrapper:nth-child(3) { top: 120px !important; }
+    .project-stack__wrapper:nth-child(4) { top: 120px !important; }
+}
+
+
 
 
 
@@ -2350,3 +2365,29 @@ body {
     }
 }
 
+
+
+/* ============================================
+   CV DOWNLOAD PROGRESS BAR
+   ============================================ */
+.navbar__cv-download-option {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.navbar__cv-download-option::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 0;
+    background-color: #F2F2F2;
+    z-index: -1;
+    transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.navbar__cv-download-option.is-loading {
+    background-color: transparent !important;
+    pointer-events: none;
+}
+.navbar__cv-download-option.is-loading::before {
+    width: 100%;
+}
