@@ -1,3 +1,28 @@
+@charset "UTF-8";
+
+/* ============================================
+   CROSS-BROWSER NORMALIZATION & COLOR PROFILES
+   ============================================ */
+html, body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    color-scheme: light;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+}
+
 
 /* ============================================
    LAPTOP STICKY HEIGHT FIX (NO 3D)
@@ -693,6 +718,7 @@ body {
         }
         
         .faq__icon {
+            box-sizing: content-box !important;
             width: 24px;
             flex-shrink: 0;
             height: 24px;
@@ -2407,3 +2433,71 @@ body {
     background-color: #333333;
     color: #ffffff;
 }
+
+
+/* ============================================
+   BUTTERY SMOOTH FAQ GRID ANIMATION
+   ============================================ */
+.faq__item {
+    height: auto !important;
+    overflow: hidden !important;
+}
+.faq__grid-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.faq__item.active .faq__grid-wrapper {
+    grid-template-rows: 1fr;
+}
+.faq__answer-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+.faq__answer {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.4s ease;
+}
+.faq__item.active .faq__answer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease 0.1s, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.05s;
+}
+
+
+
+
+/* ============================================
+   FAQ ICON MORPHING (+ TO -)
+   ============================================ */
+.faq__icon {
+    position: relative;
+}
+.faq__item.active .faq__icon {
+    transform: none !important; /* Override the old rotation */
+}
+.faq__icon-line-h, .faq__icon-line-v {
+    position: absolute;
+    background-color: currentColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.faq__icon-line-h {
+    width: 14px;
+    height: 2px;
+}
+.faq__icon-line-v {
+    width: 2px;
+    height: 14px;
+}
+.faq__item.active .faq__icon-line-v {
+    transform: translate(-50%, -50%) scaleY(0);
+}
+
+
+
+

@@ -130,15 +130,14 @@
                     // Close all
                     faqItems.forEach(faq => {
                         faq.classList.remove('active');
-                        faq.style.height = '80px';
+                        
                     });
                     
                     // Open clicked
                     if (!isActive) {
                         item.classList.add('active');
                         const answer = item.querySelector('.faq__answer');
-                        const totalHeight = 80 + answer.scrollHeight;
-                        item.style.height = totalHeight + 'px';
+                        
                     }
                 });
             });
@@ -579,3 +578,7 @@ document.addEventListener('click', function(e) {
         }, 1200);
     }
 });
+
+
+
+
