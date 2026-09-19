@@ -1,5 +1,6 @@
 ﻿const i18n = {
     ro: {
+        'drag_card': 'Trage cardul',
         'nav_projects': 'Proiecte <span class="count">(6)</span>',
         'nav_faq': '&Icirc;ntreb&#259;ri &#537;i r&#259;spunsuri',
         'nav_reviews': 'Recenzii <span class="count">(3)</span>',
@@ -40,6 +41,7 @@
         'footer_rights': '&copy; 2026 Maxim. Toate drepturile rezervate.'
     },
     ru: {
+        'drag_card': 'Потяни карточку',
         'nav_projects': '&#1055;&#1088;&#1086;&#1077;&#1082;&#1090;&#1099; <span class="count">(6)</span>',
         'nav_faq': '&#1042;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099; &#1080; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;',
         'nav_reviews': '&#1054;&#1090;&#1079;&#1099;&#1074;&#1099; <span class="count">(3)</span>',
@@ -79,6 +81,7 @@
         'footer_rights': '&copy; 2026 Maxim. &#1042;&#1089;&#1077; &#1087;&#1088;&#1072;&#1074;&#1072; &#1079;&#1072;&#1097;&#1080;&#1097;&#1077;&#1085;&#1099;.'
     },
     en: {
+        'drag_card': 'Drag card',
         'nav_projects': 'Projects <span class="count">(6)</span>',
         'nav_faq': 'FAQ',
         'nav_reviews': 'Reviews <span class="count">(3)</span>',
