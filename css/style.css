@@ -271,16 +271,14 @@ body {
             font-size: 18px;
             cursor: pointer;
             text-decoration: none;
-            color: rgba(51, 51, 51, 0.5);
-            background: linear-gradient(to right, #333333 50%, rgba(51, 51, 51, 0.5) 50%);
-            background-size: 200% 100%;
-            background-position: right;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: background-position 0.4s ease;
-        }.navbar__logo:hover {
-            background-position: left;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         .navbar__links {
@@ -665,8 +663,7 @@ body {
             color: #333333;
             border-bottom: 2px dotted #999999;
             padding-bottom: 2px;
-        }.project-card__link:hover {
-            border-bottom-color: #333333;
+            
         }
 
                 /* --- FAQ SECTION --- */
@@ -839,7 +836,7 @@ body {
 
         .review__link {
         width: 100% !important;
-        height: 40px !important;
+        height: 50px !important;
         background-color: #F2F2F2 !important;
         border: 1px solid #E8E8E8 !important;
         border-radius: 6px !important;
@@ -884,6 +881,7 @@ body {
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
+            color: rgba(51, 51, 51, 0.5);
             background: linear-gradient(to right, #333333 50%, rgba(51, 51, 51, 0.5) 50%);
             background-size: 200% 100%;
             background-position: right;
@@ -901,13 +899,14 @@ body {
             gap: 8px;
             font-size: 15px;
             font-weight: 600;
-            color: rgba(51, 51, 51, 0.5);
+            
             color: #333333;
         }
         
         .footer__link {
             text-decoration: none;
             cursor: pointer;
+            color: rgba(51, 51, 51, 0.5);
             background: linear-gradient(to right, #333333 50%, rgba(51, 51, 51, 0.5) 50%);
             background-size: 200% 100%;
             background-position: right;
@@ -938,9 +937,9 @@ body {
             z-index: 100;
             bottom: 150%;
             left: 50%;
-            transform: translateX(-50%) translateY(10px);
+            transform: translateX(-50%) translateY(-8px);
             opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), visibility 0.3s;
             font-size: 13px;
             font-weight: 500;
             white-space: nowrap;
@@ -2468,12 +2467,6 @@ body {
 
 
 
-/* ============================================
-   FAQ ICON MORPHING (+ TO -)
-   ============================================ */
-.faq__icon {
-    position: relative;
-}
 .faq__item.active .faq__icon {
     transform: none !important; /* Override the old rotation */
 }
@@ -2501,3 +2494,204 @@ body {
 
 
 
+
+/* ============================================
+   ICON MORPHING (+ TO -) FOR FAQ & FOOTER
+   ============================================ */
+.faq__icon, .footer__icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+}
+.faq__item.active .faq__icon,
+.footer__group.active .footer__icon {
+    transform: none !important; /* No rotation */
+}
+.faq__icon-line-h, .faq__icon-line-v,
+.footer__icon-line-h, .footer__icon-line-v {
+    position: absolute;
+    background-color: currentColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.faq__icon-line-h, .footer__icon-line-h {
+    width: 14px;
+    height: 2px;
+}
+.faq__icon-line-v, .footer__icon-line-v {
+    width: 2px;
+    height: 14px;
+}
+.faq__item.active .faq__icon-line-v,
+.footer__group.active .footer__icon-line-v {
+    transform: translate(-50%, -50%) scaleY(0); /* Flatten the vertical line to 0 */
+}
+
+/* ============================================
+   REVIEW BUTTON & DATE FIX (MOBILE)
+   ============================================ */
+.review-date {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    margin-left: 10px;
+}
+
+
+.review__link--disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background-color: #FAFAFA !important;
+    border: 1px dashed #CCCCCC !important;
+    color: #999999 !important;
+}
+
+
+/* ============================================
+   PREMIUM POPUP ANIMATIONS (CV & LANG)
+   ============================================ */
+.navbar__cv-dropdown-menu {
+    display: block !important;
+}
+
+.navbar__lang-menu,
+.navbar__cv-dropdown-menu {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    /* Ultra-minimalist clean slide */
+    transform: translateY(-8px) !important;
+    transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.25s !important;
+    pointer-events: none; 
+}
+
+.navbar__lang-dropdown.open .navbar__lang-menu,
+.navbar__cv-dropdown.open .navbar__cv-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto;
+}
+
+
+
+
+/* The Line Draw (Desktop Only) */
+@media (min-width: 1025px) {
+    
+    
+}
+
+
+
+
+
+
+
+.navbar__logo-text {
+    color: rgba(51, 51, 51, 0.5);
+    background: linear-gradient(to right, #333333 50%, rgba(51, 51, 51, 0.5) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.4s ease;
+}
+
+.navbar__logo:hover .navbar__logo-text {
+    background-position: left;
+}
+
+.navbar__logo-icon {
+    position: absolute;
+    right: -25px; /* Offset to the right of the text */
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(10px) rotate(-20deg) scale(0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0s;
+    pointer-events: none;
+}
+
+.navbar__logo:hover .navbar__logo-icon {
+    opacity: 1;
+    transform: translateY(0) rotate(15deg) scale(1); /* Popping bounce with slight rotation */
+    transition-delay: 0.3s; /* Waits for the gradient to finish */
+}
+
+
+/* ============================================
+   LOGO ORIGINAL GRADIENT
+   ============================================ */
+.navbar__logo {
+    color: rgba(51, 51, 51, 0.5);
+    background: linear-gradient(to right, #333333 50%, rgba(51, 51, 51, 0.5) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.4s ease;
+}
+.navbar__logo:hover {
+    background-position: left;
+}
+
+
+/* ============================================
+   MOBILE POPUPS FIX (INLINE ACCORDIONS)
+   ============================================ */
+@media (max-width: 1024px) {
+    .navbar__lang-menu,
+    .navbar__cv-dropdown-menu {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        background-color: #ffffff !important;
+        border-radius: 8px !important;
+        
+        /* Animation properties */
+        display: flex !important;
+        flex-direction: column !important;
+        max-height: 0 !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
+        margin-top: 0 !important;
+        border: 0px solid #E8E8E8 !important;
+        transform: none !important;
+        
+        transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, margin-top 0.3s ease, visibility 0.4s !important;
+        pointer-events: none !important;
+    }
+    
+    .navbar__lang-dropdown.open .navbar__lang-menu,
+    .navbar__cv-dropdown.open .navbar__cv-dropdown-menu {
+        max-height: 300px !important; /* Enough to fit contents */
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-top: 8px !important;
+        border: 1px solid #E8E8E8 !important;
+        pointer-events: auto !important;
+    }
+
+    /* Bigger touch targets inside the mobile popups */
+    .navbar__lang-option,
+    .navbar__cv-download-option {
+        padding: 16px 20px !important;
+        font-size: 16px !important;
+        border-bottom: 1px solid #F0F0F0;
+    }
+    .navbar__lang-option:last-child,
+    .navbar__cv-download-option:last-child {
+        border-bottom: none;
+    }
+}
